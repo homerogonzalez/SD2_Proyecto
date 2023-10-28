@@ -1,0 +1,2 @@
+DECODER_SISMIN.vhd #Entity sismin 6
+DECODER_SISMIN.vhd #Architecture dataflow sismin 11

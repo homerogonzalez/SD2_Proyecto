@@ -1,0 +1,8 @@
+[Project]
+Current config=GENERIC
+VCS=0
+modified=3
+[Configurations]
+GENERIC=DECODER_SISMIN
+[Files]
+/C:\Documents and Settings\Administrador\Mis documentos\SD2\SISMIN\DECODER_SISMIN\vhd\DECODER_SISMIN.vhd=4, 1 31060039 2146289736, 0, , , ,

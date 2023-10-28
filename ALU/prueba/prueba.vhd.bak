@@ -1,0 +1,40 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity ALU_PROC is
+	port(--entrada de datos
+		A,B: in std_logic_vector(7 downto 0);
+		Cin: in std_logic;
+		--entradas de seleccion
+		selec: in std_logic_vector(2 downto 0);
+		--salidas de datos
+		F : out std_logic_vector(7 downto 0);
+		C,Z out std_logic);
+		
+architecture behavioral of ALU_PROC is
+signal auxa,auxb,auxf: (8 downto 0);
+
+	auxa <= '0'&A; --Se le añade un bit a la izq para el carry
+	auxb <= '0'&B;
+	F <= auxa(7 downto 0);
+	C <= auxf(8);
+	Z <= not (auxf(7) OR auxf(7) OR auxf(7) OR auxf(7) OR auxf(7) OR auxf(7) OR auxf(7) OR auxf(7));
+
+process(auxa,auxb,selec);
+begin
+	if selec="000" then auxf <= auxa + auxb;
+	else if selec="001" then auxf <= auxa AND auxb;
+	else if selec="010" then auxf <= auxa OR auxb;
+	else if selec="011" then auxf <= NOT auxa;
+	else if selec="100" then auxf <= auxa >> 1;
+	else if selec="101" then auxf <= auxa << 1;
+	else if selec="110" then auxf <= auxa XOR auxb;
+	else auxf <= auxb;
+	end if;
+	
+end process;
+end behavioral;
+
+

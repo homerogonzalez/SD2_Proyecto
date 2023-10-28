@@ -1,0 +1,93 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Qsal_SP[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_SP[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_SP[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_SP[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_SP[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_SP[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_SP[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_SP[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "Din_SP[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ARST_SP",
+					"strict" : false
+				},
+				{
+					"name" : "INC",
+					"strict" : false
+				},
+				{
+					"name" : "DEC",
+					"strict" : false
+				},
+				{
+					"name" : "LOAD",
+					"strict" : false
+				},
+				{
+					"name" : "Din_SP[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Din_SP[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Din_SP[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Din_SP[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Din_SP[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Din_SP[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Din_SP[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

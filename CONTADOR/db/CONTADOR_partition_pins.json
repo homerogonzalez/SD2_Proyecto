@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Qsal_cont[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_cont[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_cont[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_cont[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_cont[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_cont[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_cont[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Qsal_cont[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "ARST_CONT",
+					"strict" : false
+				},
+				{
+					"name" : "SRST_CONT",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

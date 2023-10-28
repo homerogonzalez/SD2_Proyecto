@@ -1,0 +1,20 @@
+ENTITY sismin IS
+    PORT (
+	a9 : in std_logic  ; 
+	a8 : in std_logic  ; 
+	a7 : in std_logic  ; 
+	a6 : in std_logic  ; 
+	a5 : in std_logic  ; 
+	a4 : in std_logic  ; 
+	a3 : in std_logic  ; 
+	a2 : in std_logic  ; 
+	a1 : in std_logic  ; 
+	a0 : in std_logic  ; 
+	rw : in std_logic  ; 
+	rd : inout std_logic  ; 
+	wt : inout std_logic  ; 
+	pe : inout std_logic  ; 
+	psa : inout std_logic  ; 
+	psb : inout std_logic 
+    ) ;
+END sismin ;

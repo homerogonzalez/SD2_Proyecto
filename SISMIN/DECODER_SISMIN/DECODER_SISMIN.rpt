@@ -1,0 +1,309 @@
+
+     | | | | | | |
+   _________________
+  -|               |-
+  -|               |-
+  -|               |-
+  -|    CYPRESS    |-
+  -|               |-
+  -|               |-   Warp VHDL Synthesis Compiler: Version 6.3 IR 35
+  -|               |-   Copyright (C) 1991-2001 Cypress Semiconductor
+   |_______________|
+     | | | | | | |
+
+======================================================================
+Compiling:  DECODER_SISMIN.vhd
+Options:    -yu -e10 -w100 -o2 -ygs -fP -v10 -yw -dc22v10 -ppalce22v10-25pc/pi -b DECODER_SISMIN.vhd -u DECODER_SISMIN.hie
+======================================================================
+
+vhdlfe V6.3 IR 35:  VHDL parser
+Wed Sep 27 02:50:05 2023
+
+Library 'work' => directory 'lc22v10'
+Linking 'C:\ARCHIV~1\Cypress\Warp\bin\std.vhd'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\cypress.vhd'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\work\cypress.vif'.
+Using control file 'DECODER_SISMIN.ctl'.
+Library 'ieee' => directory 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work'
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\syntocyp.vif'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\synarith.vif'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\synusgnd.vif'.
+Note:  Using config. rule 'a9' to set fixedattribute 'pin_numbers' on 'a9'.
+Note:  Using config. rule 'a8' to set fixedattribute 'pin_numbers' on 'a8'.
+Note:  Using config. rule 'a7' to set fixedattribute 'pin_numbers' on 'a7'.
+Note:  Using config. rule 'a6' to set fixedattribute 'pin_numbers' on 'a6'.
+Note:  Using config. rule 'a5' to set fixedattribute 'pin_numbers' on 'a5'.
+Note:  Using config. rule 'a4' to set fixedattribute 'pin_numbers' on 'a4'.
+Note:  Using config. rule 'a3' to set fixedattribute 'pin_numbers' on 'a3'.
+Note:  Using config. rule 'a2' to set fixedattribute 'pin_numbers' on 'a2'.
+Note:  Using config. rule 'a1' to set fixedattribute 'pin_numbers' on 'a1'.
+Note:  Using config. rule 'a0' to set fixedattribute 'pin_numbers' on 'a0'.
+Note:  Using config. rule 'rw' to set fixedattribute 'pin_numbers' on 'rw'.
+Note:  Using config. rule 'rd' to set fixedattribute 'pin_numbers' on 'rd'.
+Note:  Using config. rule 'wt' to set fixedattribute 'pin_numbers' on 'wt'.
+Note:  Using config. rule 'pe' to set fixedattribute 'pin_numbers' on 'pe'.
+Note:  Using config. rule 'psa' to set fixedattribute 'pin_numbers' on 'psa'.
+Note:  Using config. rule 'psb' to set fixedattribute 'pin_numbers' on 'psb'.
+
+vhdlfe:  No errors.
+
+
+tovif V6.3 IR 35:  High-level synthesis
+Wed Sep 27 02:50:05 2023
+
+Linking 'C:\ARCHIV~1\Cypress\Warp\bin\std.vhd'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\cypress.vhd'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\work\cypress.vif'.
+Linking 'C:\Documents and Settings\Administrador\Mis documentos\SD2\SISMIN\DECODER_SISMIN\DECODER_SISMIN.ctl'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\syntocyp.vif'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\synarith.vif'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\synusgnd.vif'.
+
+tovif:  No errors.
+
+
+topld V6.3 IR 35:  Synthesis and optimization
+Wed Sep 27 02:50:05 2023
+
+Linking 'C:\ARCHIV~1\Cypress\Warp\bin\std.vhd'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\cypress.vhd'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\work\cypress.vif'.
+Linking 'C:\Documents and Settings\Administrador\Mis documentos\SD2\SISMIN\DECODER_SISMIN\DECODER_SISMIN.ctl'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\syntocyp.vif'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\synarith.vif'.
+Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\synusgnd.vif'.
+Note:  Using config. rule 'a9' to set fixedattribute 'pin_numbers' on 'a9'.
+Note:  Using config. rule 'a8' to set fixedattribute 'pin_numbers' on 'a8'.
+Note:  Using config. rule 'a7' to set fixedattribute 'pin_numbers' on 'a7'.
+Note:  Using config. rule 'a6' to set fixedattribute 'pin_numbers' on 'a6'.
+Note:  Using config. rule 'a5' to set fixedattribute 'pin_numbers' on 'a5'.
+Note:  Using config. rule 'a4' to set fixedattribute 'pin_numbers' on 'a4'.
+Note:  Using config. rule 'a3' to set fixedattribute 'pin_numbers' on 'a3'.
+Note:  Using config. rule 'a2' to set fixedattribute 'pin_numbers' on 'a2'.
+Note:  Using config. rule 'a1' to set fixedattribute 'pin_numbers' on 'a1'.
+Note:  Using config. rule 'a0' to set fixedattribute 'pin_numbers' on 'a0'.
+Note:  Using config. rule 'rw' to set fixedattribute 'pin_numbers' on 'rw'.
+Note:  Using config. rule 'rd' to set fixedattribute 'pin_numbers' on 'rd'.
+Note:  Using config. rule 'wt' to set fixedattribute 'pin_numbers' on 'wt'.
+Note:  Using config. rule 'pe' to set fixedattribute 'pin_numbers' on 'pe'.
+Note:  Using config. rule 'psa' to set fixedattribute 'pin_numbers' on 'psa'.
+Note:  Using config. rule 'psb' to set fixedattribute 'pin_numbers' on 'psb'.
+
+----------------------------------------------------------
+Detecting unused logic.
+----------------------------------------------------------
+
+
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+
+------------------------------------------------------
+Aliased 0 equations, 0 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 0 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 10.
+----------------------------------------------------------
+Created 16 PLD nodes.
+
+topld:  No errors.
+
+----------------------------------------------------------------------------
+PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+DESIGN HEADER INFORMATION  (02:50:06)
+
+Input File(s): DECODER_SISMIN.pla
+Device       : C22V10
+Package      : palce22v10-25pc/pi
+ReportFile   : DECODER_SISMIN.rpt
+
+Program Controls:
+    COMMAND LANGUAGE_VHDL 
+    COMMAND PROPERTY BUS_HOLD ENABLE 
+
+Signal Requests:
+    GROUP USEPOL ALL
+    GROUP SLOW_SLEW ALL
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+OPTIMIZATION OPTIONS       (02:50:06)
+
+Messages:
+  Information: Optimizing logic using best output polarity for signals:
+         pe
+
+  Information: Selected logic optimization OFF for signals:
+         psa psb rd wt
+
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Optimizer Software:       MINOPT.EXE     01/NOV/1999  [v4.02 ] 6.3 IR 35
+
+LOGIC MINIMIZATION         ()
+
+Messages:
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully
+----------------------------------------------------------------------------
+PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+OPTIMIZATION OPTIONS       (02:50:06)
+
+Messages:
+  Information: Optimizing Banked Preset/Reset requirements.
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+<CYPRESSTAG name="Equations" icon=FILE_RPT_EQUATION>
+DESIGN EQUATIONS           (02:50:06)
+</CYPRESSTAG>
+
+    /pe =
+          /a0 * /a1 * /a2 * /a3 * /a4 * /a5 * a6 * /a7 * a8 * a9 * rw 
+
+    psa =
+          /a0 * /a1 * /a2 * /a3 * /a4 * a5 * /a6 * /a7 * a8 * a9 * /rw 
+
+    psb =
+          /a0 * /a1 * /a2 * /a3 * /a4 * /a5 * /a6 * /a7 * a8 * a9 * /rw 
+
+    rd =
+          /rw 
+
+    wt =
+          rw 
+
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+DESIGN RULE CHECK          (02:50:06)
+
+Messages:
+                 None.
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+<CYPRESSTAG name="Pinout" icon=FILE_RPT_PINOUT>
+PINOUT INFORMATION   (02:50:06)
+</CYPRESSTAG>
+Messages:
+  Information: All signals pre-placed in user design.
+
+
+                                 C22V10
+                 __________________________________________
+             rw =| 1|                                  |24|* not used       
+             a9 =| 2|                                  |23|= rd             
+             a8 =| 3|                                  |22|= psa            
+             a7 =| 4|                                  |21|* not used       
+             a6 =| 5|                                  |20|* not used       
+             a5 =| 6|                                  |19|* not used       
+             a4 =| 7|                                  |18|* not used       
+             a3 =| 8|                                  |17|* not used       
+             a2 =| 9|                                  |16|= pe             
+             a1 =|10|                                  |15|= psb            
+             a0 =|11|                                  |14|= wt             
+       not used *|12|                                  |13|* not used       
+                 __________________________________________
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully  
+  Information: Checking for duplicate NODE logic.
+----------------------------------------------------------------------------
+PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+<CYPRESSTAG name="Utilization" icon=FILE_RPT_UTILIZATION>
+RESOURCE UTILIZATION (02:50:06)
+</CYPRESSTAG>
+  Information: Macrocell Utilization.
+
+                     Description        Used     Max
+                 ______________________________________
+                 | Dedicated Inputs   |   10  |   11  |
+                 | Clock/Inputs       |    1  |    1  |
+                 | I/O Macrocells     |    5  |   10  |
+                 ______________________________________
+                                          16  /   22   = 72  %
+
+
+  Information: Output Logic Product Term Utilization.
+
+                  Node#  Output Signal Name  Used   Max
+                 ________________________________________
+                 | 14  |  wt              |   1  |   8  |
+                 | 15  |  psb             |   1  |  10  |
+                 | 16  |  pe              |   1  |  12  |
+                 | 17  |  Unused          |   0  |  14  |
+                 | 18  |  Unused          |   0  |  16  |
+                 | 19  |  Unused          |   0  |  16  |
+                 | 20  |  Unused          |   0  |  14  |
+                 | 21  |  Unused          |   0  |  12  |
+                 | 22  |  psa             |   1  |  10  |
+                 | 23  |  rd              |   1  |   8  |
+                 | 25  |  Unused          |   0  |   1  |
+                 ________________________________________
+                                              5  / 121   = 4   %
+
+
+Completed Successfully  
+----------------------------------------------------------------------------
+PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
+
+JEDEC ASSEMBLE             (02:50:06)
+
+Messages:
+  Information: Output file 'DECODER_SISMIN.pin' created.
+  Information: Output file 'DECODER_SISMIN.jed' created.
+
+  Usercode:    
+  Checksum:    3569
+
+
+
+Summary:
+                 Error Count = 0      Warning Count = 0
+
+Completed Successfully at 02:50:06

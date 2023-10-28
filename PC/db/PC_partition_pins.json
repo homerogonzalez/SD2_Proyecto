@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "PCH[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PCH[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PCL[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PCL[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PCL[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PCL[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PCL[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PCL[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PCL[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PCL[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "MBRAux[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ARST_PC",
+					"strict" : false
+				},
+				{
+					"name" : "LOAD",
+					"strict" : false
+				},
+				{
+					"name" : "INC",
+					"strict" : false
+				},
+				{
+					"name" : "MBRAux[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MBR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MBR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MBR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MBR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MBR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MBR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MBR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MBR[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

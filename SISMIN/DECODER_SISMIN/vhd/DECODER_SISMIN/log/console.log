@@ -1,0 +1,11 @@
+Design: 12:05 a.m., Martes, 26 de Septiembre de 2023
+Design: Opening design "C:\Documents and Settings\Administrador\Mis documentos\SD2\SISMIN\DECODER_SISMIN\vhd\DECODER_SISMIN\DECODER_SISMIN.adf"
+Compilation with file reorder...
+File: C:\Documents and Settings\Administrador\Mis documentos\SD2\SISMIN\DECODER_SISMIN\vhd\DECODER_SISMIN.vhd
+Compile Entity "sismin"
+Compile Architecture "DSMB" of Entity "sismin"
+Top-Level unit detected
+Entity  =>   sismin
+Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
+ELBREAD: Elaboration process.
+ELBREAD: Elaboration time 0.0 [s].

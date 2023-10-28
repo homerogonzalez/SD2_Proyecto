@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sat Oct 21 21:34:06 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : ALU_PROC_PARA
+Top-level Entity Name : ALU_PROC_PARA
+Family : MAX 10
+Total logic elements : 55
+    Total combinational functions : 55
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 29
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

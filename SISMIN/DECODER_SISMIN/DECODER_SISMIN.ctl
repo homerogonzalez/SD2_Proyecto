@@ -1,0 +1,16 @@
+fixedattribute PIN_NUMBERS of rd is "23" ;
+fixedattribute PIN_NUMBERS of psa is "22" ;
+fixedattribute PIN_NUMBERS of pe is "16" ;
+fixedattribute PIN_NUMBERS of psb is "15" ;
+fixedattribute PIN_NUMBERS of wt is "14" ;
+fixedattribute PIN_NUMBERS of a0 is "11" ;
+fixedattribute PIN_NUMBERS of a1 is "10" ;
+fixedattribute PIN_NUMBERS of a2 is "9" ;
+fixedattribute PIN_NUMBERS of a3 is "8" ;
+fixedattribute PIN_NUMBERS of a4 is "7" ;
+fixedattribute PIN_NUMBERS of a5 is "6" ;
+fixedattribute PIN_NUMBERS of a6 is "5" ;
+fixedattribute PIN_NUMBERS of a7 is "4" ;
+fixedattribute PIN_NUMBERS of a8 is "3" ;
+fixedattribute PIN_NUMBERS of a9 is "2" ;
+fixedattribute PIN_NUMBERS of rw is "1" ;

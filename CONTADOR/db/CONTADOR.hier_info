@@ -1,0 +1,35 @@
+|CONTADOR
+ARST_CONT => cuenta[0].ACLR
+ARST_CONT => cuenta[1].ACLR
+ARST_CONT => cuenta[2].ACLR
+ARST_CONT => cuenta[3].ACLR
+ARST_CONT => cuenta[4].ACLR
+ARST_CONT => cuenta[5].ACLR
+ARST_CONT => cuenta[6].ACLR
+ARST_CONT => cuenta[7].ACLR
+SRST_CONT => cuenta.OUTPUTSELECT
+SRST_CONT => cuenta.OUTPUTSELECT
+SRST_CONT => cuenta.OUTPUTSELECT
+SRST_CONT => cuenta.OUTPUTSELECT
+SRST_CONT => cuenta.OUTPUTSELECT
+SRST_CONT => cuenta.OUTPUTSELECT
+SRST_CONT => cuenta.OUTPUTSELECT
+SRST_CONT => cuenta.OUTPUTSELECT
+CLK => cuenta[0].CLK
+CLK => cuenta[1].CLK
+CLK => cuenta[2].CLK
+CLK => cuenta[3].CLK
+CLK => cuenta[4].CLK
+CLK => cuenta[5].CLK
+CLK => cuenta[6].CLK
+CLK => cuenta[7].CLK
+Qsal_cont[0] << cuenta[0].DB_MAX_OUTPUT_PORT_TYPE
+Qsal_cont[1] << cuenta[1].DB_MAX_OUTPUT_PORT_TYPE
+Qsal_cont[2] << cuenta[2].DB_MAX_OUTPUT_PORT_TYPE
+Qsal_cont[3] << cuenta[3].DB_MAX_OUTPUT_PORT_TYPE
+Qsal_cont[4] << cuenta[4].DB_MAX_OUTPUT_PORT_TYPE
+Qsal_cont[5] << cuenta[5].DB_MAX_OUTPUT_PORT_TYPE
+Qsal_cont[6] << cuenta[6].DB_MAX_OUTPUT_PORT_TYPE
+Qsal_cont[7] << cuenta[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

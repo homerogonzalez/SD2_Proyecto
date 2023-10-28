@@ -1,0 +1,7 @@
+ Compilation with file reorder...
+ File: C:\Documents and Settings\Administrador\Mis documentos\SD2\SISMIN\DECODER_SISMIN\vhd\DECODER_SISMIN.vhd
+ Compile Entity "sismin"
+ Compile Architecture "DSMB" of Entity "sismin"
+ Top-Level unit detected
+ Entity  =>   sismin
+ Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]
