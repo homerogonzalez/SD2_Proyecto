@@ -1,0 +1,334 @@
+Determining the location of the ModelSim executable...
+
+Using: c:/intelfpga_lite/22.1std/questa_fse/win64/
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off UC -c UC --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/Waveform.vwf.vht"
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Sat Oct 28 17:38:45 2023
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off UC -c UC --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/Waveform.vwf.vht"
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+simulation
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 4645 megabytes
+    Info: Processing ended: Sat Oct 28 17:38:46 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/" UC -c UC
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Sat Oct 28 17:38:46 2023
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/" UC -c UC
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file UC.vho in folder "C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4654 megabytes
+    Info: Processing ended: Sat Oct 28 17:38:47 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/UC.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+c:/intelfpga_lite/22.1std/questa_fse/win64//vsim -c -do UC.do
+
+Reading pref.tcl
+
+
+# 2021.2
+
+
+# do UC.do
+
+# ** Warning: (vlib-34) Library already exists at "work".
+
+# Errors: 0, Warnings: 1
+
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 17:38:48 on Oct 28,2023
+# vcom -work work UC.vho 
+
+# -- Loading package STANDARD
+
+# -- Loading package TEXTIO
+
+# -- Loading package std_logic_1164
+
+# -- Loading package VITAL_Timing
+
+# -- Loading package VITAL_Primitives
+
+# -- Loading package fiftyfivenm_atom_pack
+
+# -- Loading package fiftyfivenm_components
+
+# -- Compiling entity hard_block
+
+# -- Compiling architecture structure of hard_block
+
+# -- Compiling entity UC
+
+# -- Compiling architecture structure of UC
+
+# End time: 17:38:49 on Oct 28,2023, Elapsed time: 0:00:01
+
+# Errors: 0, Warnings: 0
+
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+
+# Start time: 17:38:49 on Oct 28,2023
+# vcom -work work Waveform.vwf.vht 
+
+# -- Loading package STANDARD
+
+# -- Loading package TEXTIO
+
+# -- Loading package std_logic_1164
+
+# -- Compiling entity UC_vhd_vec_tst
+
+# -- Compiling architecture UC_arch of UC_vhd_vec_tst
+
+# End time: 17:38:49 on Oct 28,2023, Elapsed time: 0:00:00
+
+# Errors: 0, Warnings: 0
+
+# vsim -voptargs=""+acc"" -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.UC_vhd_vec_tst 
+# Start time: 17:38:49 on Oct 28,2023
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2021.2 win64 Apr 14 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.uc_vhd_vec_tst(uc_arch)#1
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading fiftyfivenm.fiftyfivenm_atom_pack(body)
+# Loading fiftyfivenm.fiftyfivenm_components
+# Loading work.uc(structure)#1
+# Loading work.hard_block(structure)#1
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#1
+# Loading fiftyfivenm.fiftyfivenm_io_obuf(behavior)#1
+# Loading fiftyfivenm.fiftyfivenm_io_ibuf(behavior)#1
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#2
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#3
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#4
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#5
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#6
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#7
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#8
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#9
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#10
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#11
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#12
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#13
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#14
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#15
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#16
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#17
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#18
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#19
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#20
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#21
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#22
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#23
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#24
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#25
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#26
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#27
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#28
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#29
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#30
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#31
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#32
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#33
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#34
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#35
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#36
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#37
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#38
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#39
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#40
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#41
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#42
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#43
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#44
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#45
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#46
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#47
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#48
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#49
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#50
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#51
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#52
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#53
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#54
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#55
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#56
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#57
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#58
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#59
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#60
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#61
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#62
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#63
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#64
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#65
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#66
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#67
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#68
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#69
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#70
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#71
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#72
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#73
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#74
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#75
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#76
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#77
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#78
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#79
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#80
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#81
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#82
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#83
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#84
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#85
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#86
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#87
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#88
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#89
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#90
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#91
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#92
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#93
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#94
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#95
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#96
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#97
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#98
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#99
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#100
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#101
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#102
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#103
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#104
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#105
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#106
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#107
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#108
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#109
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#110
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#111
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#112
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#113
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#114
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#115
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#116
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#117
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#118
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#119
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#120
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#121
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#122
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#123
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#124
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#125
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#126
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#127
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#128
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#129
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#130
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#131
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#132
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)#133
+# Loading fiftyfivenm.fiftyfivenm_unvm(behavior)#1
+# Loading fiftyfivenm.fiftyfivenm_adcblock(behavior)#1
+# Loading fiftyfivenm.fiftyfivenm_adcblock(behavior)#2
+
+# after#34
+
+# End time: 17:38:50 on Oct 28,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/Waveform.vwf...
+
+Reading C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/UC.msim.vcd...
+
+Processing channel transitions... 
+
+Writing the resulting VWF to C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/UC_20231028173850.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

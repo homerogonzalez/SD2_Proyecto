@@ -1,0 +1,163 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+!s11e vcom 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim
+T_opt
+!s110 1698539555
+VhHoi>b_WAH^jKO[W`A5a52
+04 14 7 work uc_vhd_vec_tst uc_arch 1
+=1-e0d55ee60250-653da823-64-3d2c
+!s124 OEM10U3 
+o-quiet -auto_acc_if_foreign -work work -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
+tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+R1
+Ehard_block
+Z2 w1698539927
+Z3 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z4 DPx11 fiftyfivenm 21 fiftyfivenm_atom_pack 0 22 Q30ON0G27H?JMDzR@?U0b0
+Z5 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z8 DPx11 fiftyfivenm 22 fiftyfivenm_components 0 22 PoV3DMKP6ALS`HjUAG2IY3
+!i122 6
+R1
+Z9 8UC.vho
+Z10 FUC.vho
+l0
+L35 1
+Vhj[i;a0dD85B`o1JPT^cg2
+!s100 3A]XnMhF<;9mKUe5mn3aM1
+Z11 OL;C;2021.2;73
+32
+Z12 !s110 1698539929
+!i10b 1
+Z13 !s108 1698539928.000000
+Z14 !s90 -work|work|UC.vho|
+Z15 !s107 UC.vho|
+!i113 0
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
+Astructure
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 10 hard_block 0 22 hj[i;a0dD85B`o1JPT^cg2
+!i122 6
+l76
+L54 28
+Va5ClDYec`9chO`Ne0M1NL2
+!s100 >:Wi^nX[YiN=@>>JC6K_83
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Euc
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+!i122 6
+R1
+R9
+R10
+l0
+L89 1
+V^M3n>DFI[7o^M]Pf41EJg2
+!s100 WgjmBf;n5f=Mc^5ch6N3]1
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Astructure
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 2 uc 0 22 ^M3n>DFI[7o^M]Pf41EJg2
+!i122 6
+l359
+L134 3726
+VUWKC5nb6@z[DUh]FbZeZc3
+!s100 zJiBCdl:6fM910DOC4Eei1
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Euc_vhd_vec_tst
+Z18 w1698539925
+R6
+R7
+!i122 7
+R1
+Z19 8Waveform.vwf.vht
+Z20 FWaveform.vwf.vht
+l0
+L32 1
+VC0h=fH;GdL6N<ba38S5MG0
+!s100 g=oL;5:XoC;2ZJ7V=f^V73
+R11
+32
+R12
+!i10b 1
+Z21 !s108 1698539929.000000
+Z22 !s90 -work|work|Waveform.vwf.vht|
+Z23 !s107 Waveform.vwf.vht|
+!i113 0
+R16
+R17
+Auc_arch
+R6
+R7
+Z24 DEx4 work 14 uc_vhd_vec_tst 0 22 C0h=fH;GdL6N<ba38S5MG0
+!i122 7
+l53
+Z25 L34 157
+Z26 VE5UlnLiE:@h3>Xbk8ihIO3
+Z27 !s100 jH`3AlOEzl_=Ce8<<FB7z3
+R11
+32
+R12
+!i10b 1
+R21
+R22
+R23
+!i113 0
+R16
+R17
