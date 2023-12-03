@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu Oct 26 22:30:04 2023
+    Info: Processing started: Thu Nov 30 19:29:21 2023
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ALU_PROC_FINAL -c ALU_PROC_FINAL --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/Waveform.vwf.vht"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -53,14 +53,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu Oct 26 22:30:06 2023
+    Info: Processing started: Thu Nov 30 19:29:23 2023
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/" ALU_PROC_FINAL -c ALU_PROC_FINAL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file ALU_PROC_FINAL.vho in folder "C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4645 megabytes
-    Info: Processing ended: Thu Oct 26 22:30:07 2023
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Thu Nov 30 19:29:25 2023
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -88,7 +88,7 @@ Reading pref.tcl
 
 # Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 
-# Start time: 22:30:09 on Oct 26,2023
+# Start time: 19:29:27 on Nov 30,2023
 # vcom -work work ALU_PROC_FINAL.vho 
 
 # -- Loading package STANDARD
@@ -113,13 +113,13 @@ Reading pref.tcl
 
 # -- Compiling architecture structure of ALU_PROC_FINAL
 
-# End time: 22:30:09 on Oct 26,2023, Elapsed time: 0:00:00
+# End time: 19:29:27 on Nov 30,2023, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 
-# Start time: 22:30:09 on Oct 26,2023
+# Start time: 19:29:27 on Nov 30,2023
 
 # vcom -work work Waveform.vwf.vht 
 
@@ -133,12 +133,12 @@ Reading pref.tcl
 
 # -- Compiling architecture ALU_PROC_FINAL_arch of ALU_PROC_FINAL_vhd_vec_tst
 
-# End time: 22:30:09 on Oct 26,2023, Elapsed time: 0:00:00
+# End time: 19:29:27 on Nov 30,2023, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # vsim -voptargs=""+acc"" -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.ALU_PROC_FINAL_vhd_vec_tst 
-# Start time: 22:30:09 on Oct 26,2023
+# Start time: 19:29:27 on Nov 30,2023
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2021.2 win64 Apr 14 2021
@@ -210,7 +210,7 @@ Reading pref.tcl
 
 # after#34
 
-# End time: 22:30:11 on Oct 26,2023, Elapsed time: 0:00:02
+# End time: 19:29:30 on Nov 30,2023, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -223,7 +223,7 @@ Reading C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_F
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/ALU_PROC_FINAL_20231026223012.sim.vwf
+Writing the resulting VWF to C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/ALU_PROC_FINAL_20231130192930.sim.vwf
 
 Finished VCD to VWF conversion.
 

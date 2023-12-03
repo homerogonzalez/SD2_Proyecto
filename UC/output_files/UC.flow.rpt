@@ -1,5 +1,5 @@
 Flow report for UC
-Sat Oct 28 17:38:47 2023
+Sat Oct 28 18:38:57 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Sat Oct 28 17:38:47 2023          ;
+; Flow Status                        ; Successful - Sat Oct 28 18:38:57 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; UC                                             ;
 ; Top-level Entity Name              ; UC                                             ;
@@ -117,7 +117,11 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
-; Total                ; 00:00:32     ; --                      ; --                  ; 00:00:50                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
+; Total                ; 00:00:35     ; --                      ; --                  ; 00:00:54                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -135,6 +139,10 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; DESKTOP-UUN60E0  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-UUN60E0  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-UUN60E0  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-UUN60E0  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-UUN60E0  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-UUN60E0  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-UUN60E0  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -146,6 +154,10 @@ quartus_fit --read_settings_files=off --write_settings_files=off UC -c UC
 quartus_asm --read_settings_files=off --write_settings_files=off UC -c UC
 quartus_sta UC -c UC
 quartus_eda --read_settings_files=off --write_settings_files=off UC -c UC
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off UC -c UC --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/" UC -c UC
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off UC -c UC --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/" UC -c UC
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off UC -c UC --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/Waveform.vwf.vht"
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/" UC -c UC
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off UC -c UC --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/Waveform.vwf.vht"

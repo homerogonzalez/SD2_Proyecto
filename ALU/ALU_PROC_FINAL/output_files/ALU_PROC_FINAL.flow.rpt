@@ -1,5 +1,5 @@
 Flow report for ALU_PROC_FINAL
-Thu Oct 26 22:30:07 2023
+Thu Nov 30 19:29:24 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Thu Oct 26 22:30:07 2023          ;
+; Flow Status                        ; Successful - Thu Nov 30 19:29:24 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; ALU_PROC_FINAL                                 ;
 ; Top-level Entity Name              ; ALU_PROC_FINAL                                 ;
@@ -122,7 +122,15 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
-; Total                ; 00:00:42     ; --                      ; --                  ; 00:01:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
+; Total                ; 00:00:53     ; --                      ; --                  ; 00:01:09                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -145,6 +153,14 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; DESKTOP-UUN60E0  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-UUN60E0  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-UUN60E0  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-7UBTAEJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-7UBTAEJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-7UBTAEJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-7UBTAEJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-7UBTAEJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-7UBTAEJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-7UBTAEJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-7UBTAEJ  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -157,6 +173,14 @@ quartus_asm --read_settings_files=off --write_settings_files=off ALU_PROC_FINAL 
 quartus_sta ALU_PROC_FINAL -c ALU_PROC_FINAL
 quartus_eda --read_settings_files=off --write_settings_files=off ALU_PROC_FINAL -c ALU_PROC_FINAL
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ALU_PROC_FINAL -c ALU_PROC_FINAL --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ALU_PROC_FINAL -c ALU_PROC_FINAL --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/" ALU_PROC_FINAL -c ALU_PROC_FINAL
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ALU_PROC_FINAL -c ALU_PROC_FINAL --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/" ALU_PROC_FINAL -c ALU_PROC_FINAL
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ALU_PROC_FINAL -c ALU_PROC_FINAL --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/" ALU_PROC_FINAL -c ALU_PROC_FINAL
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ALU_PROC_FINAL -c ALU_PROC_FINAL --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/" ALU_PROC_FINAL -c ALU_PROC_FINAL
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ALU_PROC_FINAL -c ALU_PROC_FINAL --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/Waveform.vwf.vht"
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/" ALU_PROC_FINAL -c ALU_PROC_FINAL
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ALU_PROC_FINAL -c ALU_PROC_FINAL --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/ALU/ALU_PROC_FINAL/simulation/qsim/Waveform.vwf.vht"

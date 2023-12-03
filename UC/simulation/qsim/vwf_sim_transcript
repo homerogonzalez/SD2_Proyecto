@@ -26,14 +26,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Oct 28 17:38:45 2023
+    Info: Processing started: Sat Oct 28 18:38:55 2023
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off UC -c UC --vector_source="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/Waveform.vwf" --testbench_file="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/Waveform.vwf.vht"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 simulation
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 23 warnings
     Info: Peak virtual memory: 4645 megabytes
-    Info: Processing ended: Sat Oct 28 17:38:46 2023
+    Info: Processing ended: Sat Oct 28 18:38:56 2023
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -60,13 +60,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Oct 28 17:38:46 2023
+    Info: Processing started: Sat Oct 28 18:38:56 2023
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/" UC -c UC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file UC.vho in folder "C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4654 megabytes
-    Info: Processing ended: Sat Oct 28 17:38:47 2023
+    Info: Processing ended: Sat Oct 28 18:38:57 2023
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -91,11 +91,11 @@ Reading pref.tcl
 # do UC.do
 
 # ** Warning: (vlib-34) Library already exists at "work".
-
 # Errors: 0, Warnings: 1
 
 # Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 17:38:48 on Oct 28,2023
+
+# Start time: 18:38:58 on Oct 28,2023
 # vcom -work work UC.vho 
 
 # -- Loading package STANDARD
@@ -120,13 +120,13 @@ Reading pref.tcl
 
 # -- Compiling architecture structure of UC
 
-# End time: 17:38:49 on Oct 28,2023, Elapsed time: 0:00:01
+# End time: 18:38:59 on Oct 28,2023, Elapsed time: 0:00:01
 
 # Errors: 0, Warnings: 0
 
 # Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 
-# Start time: 17:38:49 on Oct 28,2023
+# Start time: 18:38:59 on Oct 28,2023
 # vcom -work work Waveform.vwf.vht 
 
 # -- Loading package STANDARD
@@ -139,13 +139,13 @@ Reading pref.tcl
 
 # -- Compiling architecture UC_arch of UC_vhd_vec_tst
 
-# End time: 17:38:49 on Oct 28,2023, Elapsed time: 0:00:00
+# End time: 18:38:59 on Oct 28,2023, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # vsim -voptargs=""+acc"" -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.UC_vhd_vec_tst 
-# Start time: 17:38:49 on Oct 28,2023
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 18:38:59 on Oct 28,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2021.2 win64 Apr 14 2021
 # //
@@ -312,7 +312,7 @@ Reading pref.tcl
 
 # after#34
 
-# End time: 17:38:50 on Oct 28,2023, Elapsed time: 0:00:01
+# End time: 18:39:01 on Oct 28,2023, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -325,7 +325,7 @@ Reading C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/UC_20231028173850.sim.vwf
+Writing the resulting VWF to C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim/UC_20231028183901.sim.vwf
 
 Finished VCD to VWF conversion.
 

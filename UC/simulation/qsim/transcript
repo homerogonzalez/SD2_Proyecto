@@ -2,7 +2,7 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 17:38:48 on Oct 28,2023
+# Start time: 18:38:58 on Oct 28,2023
 # vcom -work work UC.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -15,21 +15,21 @@
 # -- Compiling architecture structure of hard_block
 # -- Compiling entity UC
 # -- Compiling architecture structure of UC
-# End time: 17:38:49 on Oct 28,2023, Elapsed time: 0:00:01
+# End time: 18:38:59 on Oct 28,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 17:38:49 on Oct 28,2023
+# Start time: 18:38:59 on Oct 28,2023
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity UC_vhd_vec_tst
 # -- Compiling architecture UC_arch of UC_vhd_vec_tst
-# End time: 17:38:49 on Oct 28,2023, Elapsed time: 0:00:00
+# End time: 18:38:59 on Oct 28,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs=""+acc"" -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.UC_vhd_vec_tst 
-# Start time: 17:38:49 on Oct 28,2023
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 18:38:59 on Oct 28,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2021.2 win64 Apr 14 2021
 # //
@@ -193,5 +193,5 @@
 # Loading fiftyfivenm.fiftyfivenm_adcblock(behavior)#1
 # Loading fiftyfivenm.fiftyfivenm_adcblock(behavior)#2
 # after#34
-# End time: 17:38:50 on Oct 28,2023, Elapsed time: 0:00:01
+# End time: 18:39:01 on Oct 28,2023, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0

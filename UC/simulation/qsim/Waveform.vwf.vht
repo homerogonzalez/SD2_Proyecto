@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/28/2023 17:38:45"
+-- Generated on "10/28/2023 18:38:55"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          UC
 -- 
@@ -67,7 +67,11 @@ BEGIN
 	T(3) <= '0';
 	WAIT FOR 80000 ps;
 	T(3) <= '1';
+	WAIT FOR 20000 ps;
+	T(3) <= '0';
 	WAIT FOR 80000 ps;
+	T(3) <= '1';
+	WAIT FOR 20000 ps;
 	T(3) <= '0';
 WAIT;
 END PROCESS t_prcs_T_3;
@@ -79,7 +83,7 @@ BEGIN
 	T(2) <= '1';
 	WAIT FOR 40000 ps;
 	T(2) <= '0';
-	WAIT FOR 40000 ps;
+	WAIT FOR 60000 ps;
 	T(2) <= '1';
 	WAIT FOR 40000 ps;
 	T(2) <= '0';
@@ -97,7 +101,7 @@ BEGIN
 	T(1) <= '1';
 	WAIT FOR 20000 ps;
 	T(1) <= '0';
-	WAIT FOR 20000 ps;
+	WAIT FOR 40000 ps;
 	T(1) <= '1';
 	WAIT FOR 20000 ps;
 	T(1) <= '0';
@@ -143,17 +147,29 @@ BEGIN
 	T(0) <= '1';
 	WAIT FOR 10000 ps;
 	T(0) <= '0';
+	WAIT FOR 10000 ps;
+	T(0) <= '1';
+	WAIT FOR 10000 ps;
+	T(0) <= '0';
+	WAIT FOR 10000 ps;
+	T(0) <= '1';
+	WAIT FOR 10000 ps;
+	T(0) <= '0';
 WAIT;
 END PROCESS t_prcs_T_0;
 -- q[3]
 t_prcs_q_3: PROCESS
 BEGIN
+	q(3) <= '1';
+	WAIT FOR 200000 ps;
 	q(3) <= '0';
 WAIT;
 END PROCESS t_prcs_q_3;
 -- q[2]
 t_prcs_q_2: PROCESS
 BEGIN
+	q(2) <= '1';
+	WAIT FOR 200000 ps;
 	q(2) <= '0';
 WAIT;
 END PROCESS t_prcs_q_2;
@@ -167,9 +183,9 @@ END PROCESS t_prcs_q_1;
 t_prcs_q_0: PROCESS
 BEGIN
 	q(0) <= '0';
-	WAIT FOR 160000 ps;
+	WAIT FOR 200000 ps;
 	q(0) <= '1';
-	WAIT FOR 90000 ps;
+	WAIT FOR 50000 ps;
 	q(0) <= '0';
 WAIT;
 END PROCESS t_prcs_q_0;
@@ -184,6 +200,10 @@ END PROCESS t_prcs_Z;
 -- C
 t_prcs_C: PROCESS
 BEGIN
+	C <= '0';
+	WAIT FOR 110000 ps;
+	C <= '1';
+	WAIT FOR 90000 ps;
 	C <= '0';
 WAIT;
 END PROCESS t_prcs_C;

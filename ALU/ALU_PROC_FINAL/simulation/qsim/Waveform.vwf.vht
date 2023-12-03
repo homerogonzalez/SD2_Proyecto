@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/26/2023 22:30:05"
+-- Generated on "11/30/2023 19:29:23"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          ALU_PROC_FINAL
 -- 
@@ -150,10 +150,8 @@ END PROCESS t_prcs_A_4;
 -- A[3]
 t_prcs_A_3: PROCESS
 BEGIN
-	A(3) <= '1';
-	WAIT FOR 800000 ps;
 	A(3) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 900000 ps;
 	A(3) <= '1';
 WAIT;
 END PROCESS t_prcs_A_3;
@@ -180,50 +178,40 @@ END PROCESS t_prcs_A_1;
 -- A[0]
 t_prcs_A_0: PROCESS
 BEGIN
-	A(0) <= '1';
-	WAIT FOR 800000 ps;
 	A(0) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 900000 ps;
 	A(0) <= '1';
 WAIT;
 END PROCESS t_prcs_A_0;
 -- B[7]
 t_prcs_B_7: PROCESS
 BEGIN
-	B(7) <= '1';
-	WAIT FOR 800000 ps;
 	B(7) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 900000 ps;
 	B(7) <= '1';
 WAIT;
 END PROCESS t_prcs_B_7;
 -- B[6]
 t_prcs_B_6: PROCESS
 BEGIN
-	B(6) <= '1';
-	WAIT FOR 800000 ps;
 	B(6) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 900000 ps;
 	B(6) <= '1';
 WAIT;
 END PROCESS t_prcs_B_6;
 -- B[5]
 t_prcs_B_5: PROCESS
 BEGIN
-	B(5) <= '1';
-	WAIT FOR 800000 ps;
 	B(5) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 900000 ps;
 	B(5) <= '1';
 WAIT;
 END PROCESS t_prcs_B_5;
 -- B[4]
 t_prcs_B_4: PROCESS
 BEGIN
-	B(4) <= '1';
-	WAIT FOR 800000 ps;
 	B(4) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 900000 ps;
 	B(4) <= '1';
 WAIT;
 END PROCESS t_prcs_B_4;

@@ -3,6 +3,8 @@ K4
 z2
 Z0 !s99 nomlopt
 R0
+R0
+R0
 !s11e vcom 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -12,25 +14,24 @@ R0
 cModel Technology
 Z1 dC:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/UC/simulation/qsim
 T_opt
-!s110 1698539555
-VhHoi>b_WAH^jKO[W`A5a52
+!s110 1698543540
+VDhlcfdm87e6?RUBhkC:A30
 04 14 7 work uc_vhd_vec_tst uc_arch 1
-=1-e0d55ee60250-653da823-64-3d2c
+=1-e0d55ee60250-653db7b3-25c-3688
 !s124 OEM10U3 
 o-quiet -auto_acc_if_foreign -work work -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
 tCvgOpt 0
 n@_opt
 OL;O;2021.2;73
-R1
 Ehard_block
-Z2 w1698539927
+Z2 w1698543537
 Z3 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z4 DPx11 fiftyfivenm 21 fiftyfivenm_atom_pack 0 22 Q30ON0G27H?JMDzR@?U0b0
 Z5 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z7 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z8 DPx11 fiftyfivenm 22 fiftyfivenm_components 0 22 PoV3DMKP6ALS`HjUAG2IY3
-!i122 6
+!i122 10
 R1
 Z9 8UC.vho
 Z10 FUC.vho
@@ -40,9 +41,9 @@ Vhj[i;a0dD85B`o1JPT^cg2
 !s100 3A]XnMhF<;9mKUe5mn3aM1
 Z11 OL;C;2021.2;73
 32
-Z12 !s110 1698539929
+Z12 !s110 1698543539
 !i10b 1
-Z13 !s108 1698539928.000000
+Z13 !s108 1698543538.000000
 Z14 !s90 -work|work|UC.vho|
 Z15 !s107 UC.vho|
 !i113 0
@@ -56,7 +57,7 @@ R6
 R7
 R8
 DEx4 work 10 hard_block 0 22 hj[i;a0dD85B`o1JPT^cg2
-!i122 6
+!i122 10
 l76
 L54 28
 Va5ClDYec`9chO`Ne0M1NL2
@@ -79,7 +80,7 @@ R5
 R6
 R7
 R8
-!i122 6
+!i122 10
 R1
 R9
 R10
@@ -105,7 +106,7 @@ R6
 R7
 R8
 DEx4 work 2 uc 0 22 ^M3n>DFI[7o^M]Pf41EJg2
-!i122 6
+!i122 10
 l359
 L134 3726
 VUWKC5nb6@z[DUh]FbZeZc3
@@ -121,10 +122,10 @@ R15
 R16
 R17
 Euc_vhd_vec_tst
-Z18 w1698539925
+Z18 w1698543535
 R6
 R7
-!i122 7
+!i122 11
 R1
 Z19 8Waveform.vwf.vht
 Z20 FWaveform.vwf.vht
@@ -136,7 +137,7 @@ R11
 32
 R12
 !i10b 1
-Z21 !s108 1698539929.000000
+Z21 !s108 1698543539.000000
 Z22 !s90 -work|work|Waveform.vwf.vht|
 Z23 !s107 Waveform.vwf.vht|
 !i113 0
@@ -145,12 +146,12 @@ R17
 Auc_arch
 R6
 R7
-Z24 DEx4 work 14 uc_vhd_vec_tst 0 22 C0h=fH;GdL6N<ba38S5MG0
-!i122 7
+DEx4 work 14 uc_vhd_vec_tst 0 22 C0h=fH;GdL6N<ba38S5MG0
+!i122 11
 l53
-Z25 L34 157
-Z26 VE5UlnLiE:@h3>Xbk8ihIO3
-Z27 !s100 jH`3AlOEzl_=Ce8<<FB7z3
+L34 177
+VWKUk@6HRB>bSFZQZIg1FS1
+!s100 glz?TM16j0REQSlWO@WJ20
 R11
 32
 R12
