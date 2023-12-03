@@ -95,9 +95,9 @@ architecture esctructural of MPU is
 	end component;
 	
 	component BUFFER_TRI
-		port(BUF_IN_MBR: in std_logic_vector(9 downto 0);
+		port(BUF_IN_MBR: in std_logic_vector(7 downto 0);
 				BUF_RW: in std_logic;
-				BUF_OUT: out std_logic_vector(9 downto 0));
+				BUF_OUT: out std_logic_vector(7 downto 0));
 	end component;
 	
 	component OR2
@@ -107,7 +107,7 @@ architecture esctructural of MPU is
 	
 	component OR3
 		port(OR3_IN: in std_logic_vector(2 downto 0);
-				OR2_OUT: out std_logic);
+				OR3_OUT: out std_logic);
 	end component;
 	
 	component OR4
@@ -120,7 +120,8 @@ architecture esctructural of MPU is
 				UC_IN_CONT: in std_logic_vector(3 downto 0);
 				UC_IN_FLAGC: in std_logic;
 				UC_IN_FLAGZ: in std_logic;
-				UC_OUT: out std_logic_vector(19 downto 0));
+				UC_OUT: out std_logic_vector(0 to 19);
+				UC_OUT_RW: out std_logic);
 	end component;
 	
 --señales
