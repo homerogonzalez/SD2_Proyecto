@@ -13,7 +13,7 @@ end MUX1;
 architecture behavioral of MUX1 is
 signal MUX1_SIG: std_logic_vector(m-1 downto 0);
 begin
-        process(S)
+        process(S,MUX1_IN_MUX2,MUX1_IN_MBR)
         begin
             case S is
                 when '0' => MUX1_SIG <= MUX1_IN_MBR;

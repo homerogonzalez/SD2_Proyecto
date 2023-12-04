@@ -120,10 +120,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "SRST",
-					"strict" : false
-				},
-				{
 					"name" : "CE_CONT",
 					"strict" : false
 				}

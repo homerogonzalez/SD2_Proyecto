@@ -13,7 +13,7 @@ end MUX2;
 architecture behavioral of MUX2 is
 signal MUX2_SIG: std_logic_vector(m-1 downto 0);
 begin
-        process(S,MUX2_IN_SP,MUX2_IN_PC)
+        process(S)
         begin
             case S is
                 when '0' => MUX2_SIG <= MUX2_IN_PC;

@@ -13,7 +13,7 @@ end MUX3;
 architecture behavioral of MUX3 is
     signal MUX3_SIG: std_logic_vector(n-1 downto 0);
     begin
-        process(S,MUX3_IN_PCL,MUX3_IN_DATOS,MUX3_IN_ACC,MUX3_IN_PCH)
+        process(S)
         begin
             case S is
                 when "00" => MUX3_SIG <= MUX3_IN_ACC;

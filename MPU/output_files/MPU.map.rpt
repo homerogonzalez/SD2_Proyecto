@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MPU
-Sun Dec  3 22:48:51 2023
+Mon Dec  4 00:05:49 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -60,16 +60,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec  3 22:48:51 2023          ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec  4 00:05:49 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; MPU                                            ;
 ; Top-level Entity Name              ; MPU                                            ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 339                                            ;
-;     Total combinational functions  ; 337                                            ;
+; Total logic elements               ; 299                                            ;
+;     Total combinational functions  ; 293                                            ;
 ;     Dedicated logic registers      ; 56                                             ;
 ; Total registers                    ; 56                                             ;
-; Total pins                         ; 31                                             ;
+; Total pins                         ; 30                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -182,63 +182,63 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------+---------+
-; OR_4.vhd                         ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/OR_4.vhd       ;         ;
-; OR_3.vhd                         ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/OR_3.vhd       ;         ;
-; OR_2.vhd                         ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/OR_2.vhd       ;         ;
-; UC.vhd                           ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/UC.vhd         ;         ;
-; SP.vhd                           ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/SP.vhd         ;         ;
-; PC.vhd                           ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/PC.vhd         ;         ;
-; MUX3.vhd                         ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX3.vhd       ;         ;
-; MUX2.vhd                         ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX2.vhd       ;         ;
-; MUX1.vhd                         ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX1.vhd       ;         ;
-; MBRAUX.vhd                       ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MBRAUX.vhd     ;         ;
-; MAR.vhd                          ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MAR.vhd        ;         ;
-; IR.vhd                           ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/IR.vhd         ;         ;
-; CONTADOR.vhd                     ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/CONTADOR.vhd   ;         ;
-; CCR.vhd                          ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/CCR.vhd        ;         ;
-; BUFFER_TRI.vhd                   ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/BUFFER_TRI.vhd ;         ;
-; ACC.vhd                          ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/ACC.vhd        ;         ;
-; MPU.vhd                          ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd        ;         ;
-; ALU.vhd                          ; yes             ; User VHDL File        ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/ALU.vhd        ;         ;
-; mbr.vhd                          ; yes             ; Auto-Found VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/mbr.vhd        ;         ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; MBR.vhd                          ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MBR.vhd        ;         ;
+; OR_4.vhd                         ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/OR_4.vhd       ;         ;
+; OR_3.vhd                         ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/OR_3.vhd       ;         ;
+; OR_2.vhd                         ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/OR_2.vhd       ;         ;
+; UC.vhd                           ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/UC.vhd         ;         ;
+; SP.vhd                           ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/SP.vhd         ;         ;
+; PC.vhd                           ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/PC.vhd         ;         ;
+; MUX3.vhd                         ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX3.vhd       ;         ;
+; MUX2.vhd                         ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX2.vhd       ;         ;
+; MUX1.vhd                         ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX1.vhd       ;         ;
+; MBRAUX.vhd                       ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MBRAUX.vhd     ;         ;
+; MAR.vhd                          ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MAR.vhd        ;         ;
+; IR.vhd                           ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/IR.vhd         ;         ;
+; CONTADOR.vhd                     ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/CONTADOR.vhd   ;         ;
+; CCR.vhd                          ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/CCR.vhd        ;         ;
+; BUFFER_TRI.vhd                   ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/BUFFER_TRI.vhd ;         ;
+; ACC.vhd                          ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/ACC.vhd        ;         ;
+; MPU.vhd                          ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd        ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File  ; C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/ALU.vhd        ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-; Estimated Total logic elements              ; 339        ;
-;                                             ;            ;
-; Total combinational functions               ; 337        ;
-; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 183        ;
-;     -- 3 input functions                    ; 88         ;
-;     -- <=2 input functions                  ; 66         ;
-;                                             ;            ;
-; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 313        ;
-;     -- arithmetic mode                      ; 24         ;
-;                                             ;            ;
-; Total registers                             ; 56         ;
-;     -- Dedicated logic registers            ; 56         ;
-;     -- I/O registers                        ; 0          ;
-;                                             ;            ;
-; I/O pins                                    ; 31         ;
-;                                             ;            ;
-; Embedded Multiplier 9-bit elements          ; 0          ;
-;                                             ;            ;
-; Maximum fan-out node                        ; SRST~input ;
-; Maximum fan-out                             ; 57         ;
-; Total fan-out                               ; 1454       ;
-; Average fan-out                             ; 3.14       ;
-+---------------------------------------------+------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 299       ;
+;                                             ;           ;
+; Total combinational functions               ; 293       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 155       ;
+;     -- 3 input functions                    ; 75        ;
+;     -- <=2 input functions                  ; 63        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 269       ;
+;     -- arithmetic mode                      ; 24        ;
+;                                             ;           ;
+; Total registers                             ; 56        ;
+;     -- Dedicated logic registers            ; 56        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 30        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 56        ;
+; Total fan-out                               ; 1317      ;
+; Average fan-out                             ; 3.16      ;
++---------------------------------------------+-----------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -246,20 +246,25 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |MPU                       ; 337 (0)             ; 56 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 31   ; 0            ; 0          ; |MPU                ; MPU         ; work         ;
-;    |ACC:U1|                ; 9 (9)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|ACC:U1         ; ACC         ; work         ;
-;    |ALU:U0|                ; 48 (48)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|ALU:U0         ; ALU         ; work         ;
-;    |CCR:U2|                ; 3 (3)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|CCR:U2         ; CCR         ; work         ;
-;    |CONTADOR:U13|          ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|CONTADOR:U13   ; CONTADOR    ; work         ;
-;    |IR:U4|                 ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|IR:U4          ; IR          ; work         ;
-;    |MAR:U12|               ; 19 (19)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|MAR:U12        ; MAR         ; work         ;
-;    |MBR:U9|                ; 20 (20)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|MBR:U9         ; MBR         ; work         ;
-;    |MBRAUX:U3|             ; 1 (1)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|MBRAUX:U3      ; MBRAUX      ; work         ;
+; |MPU                       ; 293 (0)             ; 56 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 30   ; 0            ; 0          ; |MPU                ; MPU         ; work         ;
+;    |ACC:U1|                ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|ACC:U1         ; ACC         ; work         ;
+;    |ALU:U0|                ; 53 (53)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|ALU:U0         ; ALU         ; work         ;
+;    |CCR:U2|                ; 0 (0)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|CCR:U2         ; CCR         ; work         ;
+;    |CONTADOR:U13|          ; 8 (8)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|CONTADOR:U13   ; CONTADOR    ; work         ;
+;    |IR:U4|                 ; 0 (0)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|IR:U4          ; IR          ; work         ;
+;    |MAR:U12|               ; 8 (8)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|MAR:U12        ; MAR         ; work         ;
+;    |MBR:U9|                ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|MBR:U9         ; MBR         ; work         ;
+;    |MBRAUX:U3|             ; 0 (0)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|MBRAUX:U3      ; MBRAUX      ; work         ;
+;    |MUX1:U10|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|MUX1:U10       ; MUX1        ; work         ;
+;    |MUX3:U7|               ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|MUX3:U7        ; MUX3        ; work         ;
+;    |OR_2:U15|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|OR_2:U15       ; OR_2        ; work         ;
 ;    |OR_2:U18|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|OR_2:U18       ; OR_2        ; work         ;
+;    |OR_2:U19|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|OR_2:U19       ; OR_2        ; work         ;
+;    |OR_3:U16|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|OR_3:U16       ; OR_3        ; work         ;
 ;    |OR_4:U17|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|OR_4:U17       ; OR_4        ; work         ;
-;    |PC:U6|                 ; 21 (21)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|PC:U6          ; PC          ; work         ;
-;    |SP:U5|                 ; 17 (17)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|SP:U5          ; SP          ; work         ;
-;    |UC:U14|                ; 185 (185)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|UC:U14         ; UC          ; work         ;
+;    |PC:U6|                 ; 11 (11)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|PC:U6          ; PC          ; work         ;
+;    |SP:U5|                 ; 10 (10)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|SP:U5          ; SP          ; work         ;
+;    |UC:U14|                ; 180 (180)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|UC:U14         ; UC          ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -275,15 +280,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; UC:U14|X[7]                                         ; GND                 ; yes                    ;
 ; UC:U14|X[0]                                         ; GND                 ; yes                    ;
 ; UC:U14|X[14]                                        ; GND                 ; yes                    ;
-; UC:U14|X[4]                                         ; GND                 ; yes                    ;
-; UC:U14|X[3]                                         ; GND                 ; yes                    ;
-; UC:U14|X[2]                                         ; GND                 ; yes                    ;
-; UC:U14|X[1]                                         ; GND                 ; yes                    ;
 ; UC:U14|X[5]                                         ; GND                 ; yes                    ;
 ; UC:U14|X[6]                                         ; GND                 ; yes                    ;
 ; UC:U14|X[13]                                        ; GND                 ; yes                    ;
 ; UC:U14|X[12]                                        ; GND                 ; yes                    ;
 ; UC:U14|X[11]                                        ; GND                 ; yes                    ;
+; UC:U14|X[4]                                         ; GND                 ; yes                    ;
+; UC:U14|X[3]                                         ; GND                 ; yes                    ;
+; UC:U14|X[2]                                         ; GND                 ; yes                    ;
+; UC:U14|X[1]                                         ; GND                 ; yes                    ;
 ; UC:U14|X[10]                                        ; GND                 ; yes                    ;
 ; UC:U14|X[16]                                        ; GND                 ; yes                    ;
 ; UC:U14|X[17]                                        ; GND                 ; yes                    ;
@@ -300,33 +305,30 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 56    ;
-; Number of registers using Synchronous Clear  ; 38    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 26    ;
 ; Number of registers using Asynchronous Clear ; 56    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 49    ;
+; Number of registers using Clock Enable       ; 56    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |MPU|IR:U4|IR_SIG[0]         ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |MPU|CONTADOR:U13|cuenta[2]  ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MPU|MBRAUX:U3|MBRAUX_SIG[0] ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |MPU|ACC:U1|ACC[3]           ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |MPU|PC:U6|PC[8]             ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |MPU|MAR:U12|MAR_SIG[8]      ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |MPU|MAR:U12|MAR_SIG[1]      ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |MPU|SP:U5|SP[7]             ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |MPU|MBR:U9|MBR_SIG[2]       ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MPU|MBR:U9|MBR_SIG[0]       ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MPU|UC:U14|X[17]            ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |MPU|ALU:U0|ALU_OUT[3]       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |MPU|CONTADOR:U13|cuenta[0] ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |MPU|PC:U6|PC[3]            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MPU|MAR:U12|MAR_SIG[8]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MPU|MAR:U12|MAR_SIG[1]     ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MPU|SP:U5|SP[2]            ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |MPU|MBR:U9|MBR_SIG[3]      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MPU|MBR:U9|MBR_SIG[0]      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MPU|UC:U14|X[17]           ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |MPU|ALU:U0|ALU_OUT[1]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
 +---------------------------------------------------------------------+
@@ -488,25 +490,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 31                          ;
+; boundary_port         ; 30                          ;
 ; cycloneiii_ff         ; 56                          ;
-;     CLR SCLR          ; 7                           ;
-;     ENA CLR           ; 18                          ;
-;     ENA CLR SCLR      ; 31                          ;
+;     ENA CLR           ; 30                          ;
+;     ENA CLR SLD       ; 26                          ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 337                         ;
+; cycloneiii_lcell_comb ; 293                         ;
 ;     arith             ; 24                          ;
 ;         2 data inputs ; 10                          ;
 ;         3 data inputs ; 14                          ;
-;     normal            ; 313                         ;
+;     normal            ; 269                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 54                          ;
-;         3 data inputs ; 74                          ;
-;         4 data inputs ; 183                         ;
+;         2 data inputs ; 51                          ;
+;         3 data inputs ; 61                          ;
+;         4 data inputs ; 155                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.61                        ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 4.76                        ;
 +-----------------------+-----------------------------+
 
 
@@ -525,10 +526,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Sun Dec  3 22:48:36 2023
+    Info: Processing started: Mon Dec  4 00:05:35 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MPU -c MPU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file mbr.vhd
+    Info (12022): Found design unit 1: MBR-behavioral File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MBR.vhd Line: 13
+    Info (12023): Found entity 1: MBR File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MBR.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file or_4.vhd
     Info (12022): Found design unit 1: OR_4-dataflow File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/OR_4.vhd Line: 11
     Info (12023): Found entity 1: OR_4 File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/OR_4.vhd Line: 6
@@ -592,20 +596,9 @@ Info (12128): Elaborating entity "IR" for hierarchy "IR:U4" File: C:/Users/gonza
 Info (12128): Elaborating entity "SP" for hierarchy "SP:U5" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 184
 Info (12128): Elaborating entity "PC" for hierarchy "PC:U6" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 186
 Info (12128): Elaborating entity "MUX3" for hierarchy "MUX3:U7" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 188
-Warning (10492): VHDL Process Statement warning at MUX3.vhd(19): signal "MUX3_IN_ACC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX3.vhd Line: 19
-Warning (10492): VHDL Process Statement warning at MUX3.vhd(20): signal "MUX3_IN_DATOS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX3.vhd Line: 20
-Warning (10492): VHDL Process Statement warning at MUX3.vhd(21): signal "MUX3_IN_PCL" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX3.vhd Line: 21
-Warning (10492): VHDL Process Statement warning at MUX3.vhd(22): signal "MUX3_IN_PCH" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX3.vhd Line: 22
 Info (12128): Elaborating entity "MUX2" for hierarchy "MUX2:U8" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 190
-Warning (10492): VHDL Process Statement warning at MUX2.vhd(19): signal "MUX2_IN_PC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX2.vhd Line: 19
-Warning (10492): VHDL Process Statement warning at MUX2.vhd(20): signal "MUX2_IN_SP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX2.vhd Line: 20
-Warning (12125): Using design file mbr.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: MBR-behavioral File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/mbr.vhd Line: 13
-    Info (12023): Found entity 1: MBR File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/mbr.vhd Line: 6
 Info (12128): Elaborating entity "MBR" for hierarchy "MBR:U9" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 192
 Info (12128): Elaborating entity "MUX1" for hierarchy "MUX1:U10" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 194
-Warning (10492): VHDL Process Statement warning at MUX1.vhd(19): signal "MUX1_IN_MBR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX1.vhd Line: 19
-Warning (10492): VHDL Process Statement warning at MUX1.vhd(20): signal "MUX1_IN_MUX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MUX1.vhd Line: 20
 Info (12128): Elaborating entity "BUFFER_TRI" for hierarchy "BUFFER_TRI:U11" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 196
 Info (12128): Elaborating entity "MAR" for hierarchy "MAR:U12" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 198
 Info (12128): Elaborating entity "CONTADOR" for hierarchy "CONTADOR:U13" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 200
@@ -639,15 +632,15 @@ Info (12128): Elaborating entity "OR_4" for hierarchy "OR_4:U17" File: C:/Users/
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 372 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
+Info (21057): Implemented 336 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
     Info (21059): Implemented 19 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 341 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4872 megabytes
-    Info: Processing ended: Sun Dec  3 22:48:51 2023
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:31
+    Info (21061): Implemented 306 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4861 megabytes
+    Info: Processing ended: Mon Dec  4 00:05:49 2023
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:30
 
 
