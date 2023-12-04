@@ -12,4 +12,3 @@ architecture dataflow of OR_2 is
 begin  
     OR2_OUT <= OR2_IN(1) OR OR2_IN(0);
 end dataflow;
-            

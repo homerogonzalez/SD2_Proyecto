@@ -6,7 +6,7 @@ use IEEE.std_logic_unsigned.all;
 entity MAR is
 	generic(m:integer:=10);
     port(MAR_IN_MUX1: in std_logic_vector(m-1 downto 0);
-		CE,ARST,SRST: in std_logic;
+		CLK,CE,ARST,SRST: in std_logic;
 		MAR_OUT: out std_logic_vector(m-1 downto 0));
 end MAR;
 

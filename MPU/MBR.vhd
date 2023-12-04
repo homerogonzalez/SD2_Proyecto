@@ -3,7 +3,6 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
 
-
 entity MBR is
 	generic(n:integer:=8);
 	port(MBR_IN_MUX3: in std_logic_vector(n-1 downto 0);
