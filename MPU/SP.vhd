@@ -4,7 +4,7 @@ use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
 
 entity SP is
-	generic(n:integer:=8;m:integer:=10);
+	generic(n:integer:=8; m:integer:=10);
 	port(SP_IN_MBR: in std_logic_vector(n-1 downto 0);
 	ARST,CLK,SRST,DEC_SP,INC_SP,LOAD_SP: in std_logic;
 	SP_OUT: out std_logic_vector(m-1 downto 0));
@@ -12,7 +12,7 @@ end SP;
 
 		
 architecture behavioral of SP is
-signal SP: std_logic_vector(7 downto 0);
+signal SP: std_logic_vector(n-1 downto 0);
 signal x: std_logic_vector(2 downto 0);
 begin
 x <= LOAD_SP&INC_SP&DEC_SP;

@@ -8,8 +8,8 @@ entity OR_4 is
             OR4_OUT: out std_logic);
 end OR_4;
 
-architecture behavioral of OR_4 is
+architecture dataflow of OR_4 is
 begin  
     OR4_OUT <= OR4_IN(3) OR OR4_IN(2) OR OR4_IN(1) OR OR4_IN(0);
-end behavioral;
+end dataflow;
             

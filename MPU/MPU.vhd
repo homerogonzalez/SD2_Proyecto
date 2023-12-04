@@ -5,26 +5,30 @@ use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
 
 entity MPU is 
+	generic(n:integer:=8; m:integer:=10; p:integer:=4);
 	port(CLK,ARST: in std_logic;
-			DIRECCIONES: out std_logic_vector(9 downto 0);
+			DIRECCIONES: out std_logic_vector(m-1 downto 0);
+			DATOS: inout std_logic_vector(n-1 downto 0);
 			RW: out std_logic;
-			DATOS: inout std_logic_vector(7 downto 0));
+			ESTADOS: out std_logic_vector(3 downto 0);
+			TIEMPOS: out std_logic_vector(3 downto 0));
+
 end MPU;
 		
 architecture estructural of MPU is
 
 	component ALU
-		port(ALU_IN_ACC,ALU_IN_MBR: in std_logic_vector(7 downto 0);
+		port(ALU_IN_ACC,ALU_IN_MBR: in std_logic_vector(n-1 downto 0);
 				S: in std_logic_vector(2 downto 0);
 				ALU_OUT_Z: out std_logic;
 				ALU_OUT_C: out std_logic;
-				ALU_OUT: out std_logic_vector(7 downto 0));
+				ALU_OUT: out std_logic_vector(n-1 downto 0));
 	end component;
 
 	component ACC
-		port(ACC_IN_ALU: in std_logic_vector(7 downto 0);
+		port(ACC_IN_ALU: in std_logic_vector(n-1 downto 0);
 				CE,ARST,SRST,CLK: in std_logic;
-				ACC_OUT: out std_logic_vector(7 downto 0));
+				ACC_OUT: out std_logic_vector(n-1 downto 0));
 	end component;
 		
 	component CCR
@@ -35,69 +39,69 @@ architecture estructural of MPU is
 	end component;
 
 	component MBRAUX
-		port(MBRAUX_IN_MBR: in std_logic_vector(7 downto 0);
+		port(MBRAUX_IN_MBR: in std_logic_vector(n-1 downto 0);
 				CE,ARST,SRST,CLK: in std_logic;
 				MBRAUX_OUT: out std_logic_vector(1 downto 0));
 	end component;
 
 	component IR
-		port(IR_IN_MBR: in std_logic_vector(7 downto 0);
+		port(IR_IN_MBR: in std_logic_vector(n-1 downto 0);
 				CE,ARST,SRST,CLK: in std_logic;
-				IR_OUT: out std_logic_vector(7 downto 0));
+				IR_OUT: out std_logic_vector(p-1 downto 0));
 	end component;
 	
 	component SP
-		port(SP_IN_MBR: in std_logic_vector(7 downto 0);
+		port(SP_IN_MBR: in std_logic_vector(m-1 downto 0);
 				ARST,CLK,SRST,DEC_SP,INC_SP,LOAD_SP: in std_logic;
-				SP_OUT: out std_logic_vector(7 downto 0));
+				SP_OUT: out std_logic_vector(m-1 downto 0));
 	end component;
 	
 	component CONTADOR
 		port(CLK,CE,ARST,SRST: in std_logic;
-				CONT_OUT: out std_logic_vector(7 downto 0));
+				CONT_OUT: out std_logic_vector(p-1 downto 0));
 	end component;
 
 	component PC
 		port(PCH_IN: in std_logic_vector(1 downto 0);
-				PCL_IN: in std_logic_vector(7 downto 0);
+				PCL_IN: in std_logic_vector(n-1 downto 0);
 				CLK,ARST,SRST,INC_PC,LOAD_PC: in std_logic;
-				PC_OUT: out std_logic_vector(9 downto 0));
+				PC_OUT: out std_logic_vector(m-1 downto 0));
 	end component;
 	
 	component MUX2
-		port(MUX2_IN_SP,MUX2_IN_PC: in std_logic_vector(9 downto 0);
+		port(MUX2_IN_SP,MUX2_IN_PC: in std_logic_vector(m-1 downto 0);
 				S: in std_logic;
-				MUX2_OUT: out std_logic_vector(9 downto 0));
+				MUX2_OUT: out std_logic_vector(m-1 downto 0));
 	end component;
 	
 	component MUX1
-		port(MUX1_IN_MUX2,MUX1_IN_MBR: in std_logic_vector(9 downto 0);
+		port(MUX1_IN_MUX2,MUX1_IN_MBR: in std_logic_vector(m-1 downto 0);
 				S: in std_logic;
-				MUX1_OUT: out std_logic_vector(9 downto 0));
+				MUX1_OUT: out std_logic_vector(m-1 downto 0));
 	end component;
 	
 	component MUX3
-		port(MUX3_IN_PCL,MUX3_IN_DATOS,MUX3_IN_ACC: in std_logic_vector(7 downto 0);
+		port(MUX3_IN_PCL,MUX3_IN_DATOS,MUX3_IN_ACC: in std_logic_vector(n-1 downto 0);
 				MUX3_IN_PCH,S: in std_logic_vector(1 downto 0);
-				MUX3_OUT: out std_logic_vector(7 downto 0));
+				MUX3_OUT: out std_logic_vector(n-1 downto 0));
 	end component;
 	
 	component MBR
-		port(MBR_IN_MUX3: in std_logic_vector(7 downto 0);
+		port(MBR_IN_MUX3: in std_logic_vector(n-1 downto 0);
 				CLK,CE,ARST,SRST: in std_logic;
-				MBR_OUT: out std_logic_vector(7 downto 0));
+				MBR_OUT: out std_logic_vector(n-1 downto 0));
 	end component;
 	
 	component MAR
-		port(MAR_IN_MUX1: in std_logic_vector(9 downto 0);
+		port(MAR_IN_MUX1: in std_logic_vector(m-1 downto 0);
 				CE,ARST,SRST: in std_logic;
-				MAR_OUT: out std_logic_vector(9 downto 0));
+				MAR_OUT: out std_logic_vector(m-1 downto 0));
 	end component;
 	
 	component BUFFER_TRI
-		port(BUF_IN_MBR: in std_logic_vector(7 downto 0);
+		port(BUF_IN_MBR: in std_logic_vector(n-1 downto 0);
 				BUF_RW: in std_logic;
-				BUF_OUT: out std_logic_vector(7 downto 0));
+				BUF_OUT: out std_logic_vector(n-1 downto 0));
 	end component;
 	
 	component OR_2
@@ -116,8 +120,8 @@ architecture estructural of MPU is
 	end component;
 	
 	component UC
-		port(UC_IN_IR: in std_logic_vector(3 downto 0);
-				UC_IN_CONT: in std_logic_vector(3 downto 0);
+		port(UC_IN_IR: in std_logic_vector(p-1 downto 0);
+				UC_IN_CONT: in std_logic_vector(p-1 downto 0);
 				UC_IN_FLAGC: in std_logic;
 				UC_IN_FLAGZ: in std_logic;
 				UC_OUT: out std_logic_vector(0 to 19);
@@ -135,7 +139,7 @@ signal SAL_ALU: std_logic_vector(7 downto 0);
 signal SAL_CCR_C: std_logic;
 signal SAL_CCR_Z: std_logic;
 signal SAL_MBRAUX: std_logic_vector(1 downto 0);
-signal SAL_IR: std_logic_vector(7 downto 0);
+signal SAL_IR: std_logic_vector(3 downto 0);
 signal SAL_SP: std_logic_vector(9 downto 0);
 signal SAL_PC: std_logic_vector(9 downto 0);
 signal PCL_MUX3: std_logic_vector(7 downto 0);
@@ -144,7 +148,7 @@ signal SAL_MUX3: std_logic_vector(7 downto 0);
 signal SAL_MUX2: std_logic_vector(9 downto 0);
 signal SAL_MUX1: std_logic_vector(9 downto 0);
 signal MBRS: std_logic_vector(9 downto 0);
-signal SAL_CONT: std_logic_vector(7 downto 0);
+signal SAL_CONT: std_logic_vector(3 downto 0);
 signal SAL_OR2_MUX1: std_logic;
 signal SAL_OR3_MAR: std_logic;
 signal SAL_OR4_MBR: std_logic;
@@ -159,6 +163,8 @@ begin
 	SELEC_ALU<=X(15)&X(16)&X(17);
 	SELEC_MUX3<=SAL_OR2_MUX3_1&SAL_OR2_MUX3_0;
 	MBRS<=SAL_MBRAUX&SAL_MBR;
+	ESTADOS<=SAL_IR;
+	TIEMPOS<=SAL_CONT;
 	
 
 	

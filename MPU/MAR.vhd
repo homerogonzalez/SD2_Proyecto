@@ -4,16 +4,17 @@ use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
 
 entity MAR is
-    port(MAR_IN_MUX1: in std_logic_vector(9 downto 0);
-    CE,ARST,SRST: in std_logic;
-    MAR_OUT: out std_logic_vector(9 downto 0));
+	generic(m:integer:=10);
+    port(MAR_IN_MUX1: in std_logic_vector(m-1 downto 0);
+		CE,ARST,SRST: in std_logic;
+		MAR_OUT: out std_logic_vector(m-1 downto 0));
 end MAR;
 
 		
 architecture behavioral of MAR is
-signal MAR_SIG: std_logic_vector(9 downto 0);
+signal MAR_SIG: std_logic_vector(m-1 downto 0);
 begin
-	process(CLK,SRST,ARST,x)
+	process(CLK,SRST,ARST,MAR_SIG)
 	begin
 		if (ARST = '1') then 
             MAR_SIG <= (others => '0');

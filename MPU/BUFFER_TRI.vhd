@@ -4,9 +4,10 @@ use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
 
 entity BUFFER_TRI is
-    port(BUF_IN_MBR: in std_logic_vector(7 downto 0);
+    generic(n:integer:=8);
+    port(BUF_IN_MBR: in std_logic_vector(n-1 downto 0);
             BUF_RW: in std_logic;
-            BUF_OUT: out std_logic_vector(7 downto 0));
+            BUF_OUT: out std_logic_vector(n-1 downto 0));
 end BUFFER_TRI;
 
 architecture behavioral of BUFFER_TRI is
@@ -16,8 +17,7 @@ begin
         if (BUF_RW='0') then
             BUF_OUT <= BUF_IN_MBR;
         else
-            BUF_OUT <= "ZZZZZZZZ";
-
+            BUF_OUT <= (others => 'Z');
         end if;
     end process;
 end behavioral;

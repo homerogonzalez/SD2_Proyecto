@@ -11,16 +11,16 @@ entity CCR is
 end CCR;
 
 architecture behavioral of CCR is
-    signal CCRZ: std_logic;
-    signal CCRC: std_logic;
-    begin
-        process(CLK,ARST,SRST,CE)
+signal CCRZ: std_logic;
+signal CCRC: std_logic;
+begin
+        process(CLK,ARST,SRST,CE,CCR_IN_C,CCR_IN_Z)
         begin
-            if (ARST_CONT = '1') then 
+            if (ARST = '1') then 
                 CCRC <= (others => '0');
                 CCRZ <= (others => '0');
             elsif (rising_edge(CLK)) then
-                if (SRST_CONT = '1') then
+                if (SRST = '1') then
                     CCRC <= (others => '0');
                     CCRZ <= (others => '0');
                 elsif (CE = '1') then
@@ -31,4 +31,4 @@ architecture behavioral of CCR is
         end process;
         CCR_OUT_C<=CCRC;
         CCR_OUT_Z<=CCRZ;
-    end architecture;
+end architecture;

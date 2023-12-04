@@ -11,14 +11,14 @@ entity ACC is
 end ACC;
 
 architecture behavioral of ACC is
-    signal ACC: std_logic_vector(n-1 downto 0);
-    begin
-        process(CLK,ARST,SRST,CE)
+signal ACC: std_logic_vector(n-1 downto 0);
+begin
+        process(CLK,ARST,SRST,CE,ACC)
         begin
-            if (ARST_CONT = '1') then 
+            if (ARST = '1') then 
                 ACC <= (others => '0');
             elsif (rising_edge(CLK)) then
-                if (SRST_CONT = '1') then
+                if (SRST = '1') then
                     ACC <= (others => '0');
                 elsif (CE = '1') then
                     ACC <= ACC_IN_ALU;
@@ -26,4 +26,4 @@ architecture behavioral of ACC is
             end if;
         end process;
         ACC_OUT<=ACC;
-    end architecture;
+end architecture;
