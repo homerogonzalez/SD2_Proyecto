@@ -5,13 +5,9 @@ use IEEE.std_logic_unsigned.all;
 
 entity PC is
 	generic(n:integer:=8; m:integer:=10);
-	port(ARST:in std_logic;
-		CLK:in std_logic;
+	port(PCH_IN: in std_logic_vector(1 downto 0);
 		PCL_IN: in std_logic_vector(n-1 downto 0);
-		PCH_IN: in std_logic_vector(1 downto 0);
-		LOAD_PC: in std_logic;
-		INC_PC: in std_logic;
-		SRST: in std_logic;
+		CLK,ARST,SRST,INC_PC,LOAD_PC: in std_logic;
 		PC_OUT: out std_logic_vector(m-1 downto 0));
 end PC;
 		
@@ -20,7 +16,7 @@ signal PC: std_logic_vector(m-1 downto 0);
 signal x: std_logic_vector(1 downto 0);
 begin
 x <= LOAD_PC&INC_PC;
-	process(CLK,ARST,SRST,LOAD_PC,INC_PC,x)
+	process(CLK,ARST,SRST,x)
 	begin
 		if (ARST = '1') then 
 			PC <= (others => '0');

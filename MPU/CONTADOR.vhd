@@ -4,13 +4,13 @@ use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
 
 entity CONTADOR is
-	generic(n:integer:=4);
+	generic(p:integer:=4);
 	port(CLK,CE,ARST,SRST: in std_logic;
-			CONT_OUT: out std_logic_vector(n-1 downto 0));
+			CONT_OUT: out std_logic_vector(p-1 downto 0));
 end CONTADOR;
 		
 architecture behavioral of CONTADOR is
-signal cuenta: std_logic_vector(n-1 downto 0);
+signal cuenta: std_logic_vector(p-1 downto 0);
 begin
 	process(CLK,CE,ARST,SRST,cuenta)
 	begin

@@ -4,14 +4,14 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
 
-entity MPU is 
+entity MPU is
 	generic(n:integer:=8; m:integer:=10; p:integer:=4);
-	port(CLK,ARST: in std_logic;
-			DIRECCIONES: out std_logic_vector(m-1 downto 0);
+	port(CLK,ARST,SRST: in std_logic;
 			DATOS: inout std_logic_vector(n-1 downto 0);
+			DIRECCIONES: out std_logic_vector(m-1 downto 0);
 			RW: out std_logic;
-			ESTADOS: out std_logic_vector(3 downto 0);
-			TIEMPOS: out std_logic_vector(3 downto 0));
+			ESTADOS: out std_logic_vector(p-1 downto 0);
+			TIEMPOS: out std_logic_vector(p-1 downto 0));
 
 end MPU;
 		
