@@ -11,8 +11,9 @@ entity MPU is
 			DIRECCIONES: out std_logic_vector(m-1 downto 0);
 			RW: out std_logic;
 			ESTADOS: out std_logic_vector(p-1 downto 0);
-			TIEMPOS: out std_logic_vector(p-1 downto 0));
-
+			TIEMPOS: out std_logic_vector(p-1 downto 0);
+			X_DISP: out std_logic_vector(0 to 19));
+			
 end MPU;
 		
 architecture estructural of MPU is
@@ -171,7 +172,7 @@ begin
 	TIEMPOS<=SAL_CONT;
 	RW<=SIG_RW;
 	ARST<=NOT(NARST);
-
+	X_DISP<=NOT(X);
 	
 	U0: ALU PORT MAP(ALU_IN_ACC=>SAL_ACC, ALU_IN_MBR=>SAL_MBR,S=>SELEC_ALU,ALU_OUT_Z=>SAL_ALU_Z,ALU_OUT_C=>SAL_ALU_C,ALU_OUT=>SAL_ALU); --BIEN
 	

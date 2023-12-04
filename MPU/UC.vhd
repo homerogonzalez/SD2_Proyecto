@@ -18,7 +18,7 @@ signal X: std_logic_vector(0 to 19);
 begin
 UC_OUT<=X;
 
-	process(UC_IN_FLAGC,UC_IN_FLAGZ,UC_IN_IR,UC_IN_CONT)
+	process(UC_IN_FLAGC,UC_IN_FLAGZ,UC_IN_IR,UC_IN_CONT,X)
 	begin
 	
 		--ciclo fetch
