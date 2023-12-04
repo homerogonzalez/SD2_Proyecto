@@ -1,5 +1,5 @@
 Fitter report for MPU
-Mon Dec  4 00:06:10 2023
+Mon Dec  4 00:47:36 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Mon Dec  4 00:06:10 2023          ;
+; Fitter Status                      ; Successful - Mon Dec  4 00:47:36 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; MPU                                            ;
 ; Top-level Entity Name              ; MPU                                            ;
@@ -153,12 +153,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.08        ;
+; Average used               ; 1.09        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.7%      ;
+;     Processors 2-12        ;   0.8%      ;
 +----------------------------+-------------+
 
 
@@ -335,9 +335,9 @@ The pin-out file can be found in C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 
 +---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; ARST    ; M9    ; 2        ; 0            ; 18           ; 21           ; 56                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
 ; CE_CONT ; D10   ; 8        ; 31           ; 39           ; 28           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
 ; CLK     ; M8    ; 2        ; 0            ; 18           ; 14           ; 56                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
+; NARST   ; M9    ; 2        ; 0            ; 18           ; 21           ; 56                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; 0         ;
 +---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -718,7 +718,7 @@ The pin-out file can be found in C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 
 ; M6       ;            ; 1B       ; VCCIO1B                                        ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; M7       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; M8       ; 72         ; 2        ; CLK                                            ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
-; M9       ; 74         ; 2        ; ARST                                           ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; M9       ; 74         ; 2        ; NARST                                          ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; M10      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; M11      ;            ; --       ; VCC                                            ; power  ;                       ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; M12      ;            ; --       ; VCC                                            ; power  ;                       ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -945,7 +945,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; DATOS[6]       ; Incomplete set of assignments ;
 ; DATOS[7]       ; Incomplete set of assignments ;
 ; CLK            ; Incomplete set of assignments ;
-; ARST           ; Incomplete set of assignments ;
+; NARST          ; Incomplete set of assignments ;
 ; CE_CONT        ; Incomplete set of assignments ;
 ; DIRECCIONES[0] ; Missing location assignment   ;
 ; DIRECCIONES[1] ; Missing location assignment   ;
@@ -975,7 +975,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; DATOS[6]       ; Missing location assignment   ;
 ; DATOS[7]       ; Missing location assignment   ;
 ; CLK            ; Missing location assignment   ;
-; ARST           ; Missing location assignment   ;
+; NARST          ; Missing location assignment   ;
 ; CE_CONT        ; Missing location assignment   ;
 +----------------+-------------------------------+
 
@@ -1041,7 +1041,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DATOS[6]       ; Bidir    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 ; DATOS[7]       ; Bidir    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; CLK            ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; ARST           ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
+; NARST          ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; CE_CONT        ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 +----------------+----------+---------------+---------------+-----------------------+-----+------+
 
@@ -1068,7 +1068,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DATOS[7]                        ;                   ;         ;
 ;      - MUX3:U7|Mux0~0           ; 0                 ; 6       ;
 ; CLK                             ;                   ;         ;
-; ARST                            ;                   ;         ;
+; NARST                           ;                   ;         ;
 ; CE_CONT                         ;                   ;         ;
 ;      - CONTADOR:U13|cuenta[0]~1 ; 0                 ; 6       ;
 +---------------------------------+-------------------+---------+
@@ -1079,9 +1079,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 ; Name                     ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; ARST                     ; PIN_M9             ; 56      ; Async. clear  ; yes    ; Global Clock         ; GCLK4            ; --                        ;
 ; CLK                      ; PIN_M8             ; 56      ; Clock         ; yes    ; Global Clock         ; GCLK3            ; --                        ;
 ; CONTADOR:U13|cuenta[0]~1 ; LCCOMB_X34_Y35_N0  ; 4       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; NARST                    ; PIN_M9             ; 56      ; Async. clear  ; yes    ; Global Clock         ; GCLK4            ; --                        ;
 ; OR_2:U15|OR2_OUT~0       ; LCCOMB_X36_Y36_N12 ; 8       ; Sync. load    ; no     ; --                   ; --               ; --                        ;
 ; OR_3:U16|OR3_OUT         ; LCCOMB_X36_Y36_N14 ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
 ; OR_4:U17|OR4_OUT~0       ; LCCOMB_X37_Y35_N0  ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
@@ -1096,14 +1096,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                            ;
-+------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; ARST ; PIN_M9   ; 56      ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
-; CLK  ; PIN_M8   ; 56      ; 5                                    ; Global Clock         ; GCLK3            ; --                        ;
-+------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                             ;
++-------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name  ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; CLK   ; PIN_M8   ; 56      ; 5                                    ; Global Clock         ; GCLK3            ; --                        ;
+; NARST ; PIN_M9   ; 56      ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
++-------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------+
@@ -1357,7 +1357,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DATOS[6]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; DATOS[7]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; CLK                ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; ARST               ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; NARST              ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; CE_CONT            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
@@ -1446,7 +1446,7 @@ Info (332154): The derive_clock_uncertainty command did not apply clock uncertai
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node CLK~input (placed in PIN M8 (CLK1n, DIFFIO_RX_L36n, DIFFOUT_L36n, High_Speed)) File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 9
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G3
-Info (176353): Automatically promoted node ARST~input (placed in PIN M9 (CLK1p, DIFFIO_RX_L36p, DIFFOUT_L36p, High_Speed)) File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 9
+Info (176353): Automatically promoted node NARST~input (placed in PIN M9 (CLK1p, DIFFIO_RX_L36p, DIFFOUT_L36p, High_Speed)) File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 9
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -1478,7 +1478,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.31 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.33 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1486,9 +1486,9 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Info (144001): Generated suppressed messages file C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/output_files/MPU.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 6236 megabytes
-    Info: Processing ended: Mon Dec  4 00:06:10 2023
-    Info: Elapsed time: 00:00:20
+    Info: Peak virtual memory: 6244 megabytes
+    Info: Processing ended: Mon Dec  4 00:47:37 2023
+    Info: Elapsed time: 00:00:21
     Info: Total CPU time (on all processors): 00:00:29
 
 

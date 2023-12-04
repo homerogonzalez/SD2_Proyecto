@@ -6,7 +6,7 @@ use IEEE.std_logic_unsigned.all;
 
 entity MPU is
 	generic(n:integer:=8; m:integer:=10; p:integer:=4);
-	port(CLK,ARST,CE_CONT: in std_logic;
+	port(CLK,NARST,CE_CONT: in std_logic;
 			DATOS: inout std_logic_vector(n-1 downto 0);
 			DIRECCIONES: out std_logic_vector(m-1 downto 0);
 			RW: out std_logic;
@@ -158,6 +158,7 @@ signal SAL_OR2_MUX3_0: std_logic;
 --signal nose2: std_logic;
 signal SELEC_MUX3: std_logic_vector(1 downto 0);
 signal SIG_RW: std_logic;
+signal ARST: std_logic;
 
 begin
 	
@@ -169,6 +170,7 @@ begin
 	ESTADOS<=SAL_IR;
 	TIEMPOS<=SAL_CONT;
 	RW<=SIG_RW;
+	ARST<=NOT(NARST);
 
 	
 	U0: ALU PORT MAP(ALU_IN_ACC=>SAL_ACC, ALU_IN_MBR=>SAL_MBR,S=>SELEC_ALU,ALU_OUT_Z=>SAL_ALU_Z,ALU_OUT_C=>SAL_ALU_C,ALU_OUT=>SAL_ALU); --BIEN

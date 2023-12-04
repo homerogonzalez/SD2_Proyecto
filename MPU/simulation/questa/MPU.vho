@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition"
 
--- DATE "12/04/2023 00:06:22"
+-- DATE "12/04/2023 00:47:47"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -91,13 +91,13 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY 	MPU IS
     PORT (
 	CLK : IN std_logic;
-	ARST : IN std_logic;
+	NARST : IN std_logic;
 	CE_CONT : IN std_logic;
-	DATOS : BUFFER std_logic_vector(7 DOWNTO 0);
-	DIRECCIONES : BUFFER std_logic_vector(9 DOWNTO 0);
-	RW : BUFFER std_logic;
-	ESTADOS : BUFFER std_logic_vector(3 DOWNTO 0);
-	TIEMPOS : BUFFER std_logic_vector(3 DOWNTO 0)
+	DATOS : INOUT std_logic_vector(7 DOWNTO 0);
+	DIRECCIONES : OUT std_logic_vector(9 DOWNTO 0);
+	RW : OUT std_logic;
+	ESTADOS : OUT std_logic_vector(3 DOWNTO 0);
+	TIEMPOS : OUT std_logic_vector(3 DOWNTO 0)
 	);
 END MPU;
 
@@ -130,7 +130,7 @@ END MPU;
 -- DATOS[6]	=>  Location: PIN_J10,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- DATOS[7]	=>  Location: PIN_C7,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- CLK	=>  Location: PIN_M8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- ARST	=>  Location: PIN_M9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- NARST	=>  Location: PIN_M9,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- CE_CONT	=>  Location: PIN_D10,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
@@ -145,16 +145,15 @@ SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_CLK : std_logic;
-SIGNAL ww_ARST : std_logic;
+SIGNAL ww_NARST : std_logic;
 SIGNAL ww_CE_CONT : std_logic;
-SIGNAL ww_DATOS : std_logic_vector(7 DOWNTO 0);
 SIGNAL ww_DIRECCIONES : std_logic_vector(9 DOWNTO 0);
 SIGNAL ww_RW : std_logic;
 SIGNAL ww_ESTADOS : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_TIEMPOS : std_logic_vector(3 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
-SIGNAL \ARST~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \NARST~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \CLK~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
@@ -190,8 +189,8 @@ SIGNAL \TIEMPOS[3]~output_o\ : std_logic;
 SIGNAL \CLK~input_o\ : std_logic;
 SIGNAL \CLK~inputclkctrl_outclk\ : std_logic;
 SIGNAL \U6|PC[0]~10_combout\ : std_logic;
-SIGNAL \ARST~input_o\ : std_logic;
-SIGNAL \ARST~inputclkctrl_outclk\ : std_logic;
+SIGNAL \NARST~input_o\ : std_logic;
+SIGNAL \NARST~inputclkctrl_outclk\ : std_logic;
 SIGNAL \U13|cuenta~0_combout\ : std_logic;
 SIGNAL \CE_CONT~input_o\ : std_logic;
 SIGNAL \U13|cuenta[0]~1_combout\ : std_logic;
@@ -512,7 +511,6 @@ SIGNAL \U9|MBR_SIG\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \U1|ACC\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \U14|X\ : std_logic_vector(0 TO 19);
 SIGNAL \U14|ALT_INV_UC_OUT_RW~combout\ : std_logic;
-SIGNAL \ALT_INV_ARST~inputclkctrl_outclk\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -524,9 +522,8 @@ END COMPONENT;
 BEGIN
 
 ww_CLK <= CLK;
-ww_ARST <= ARST;
+ww_NARST <= NARST;
 ww_CE_CONT <= CE_CONT;
-DATOS <= ww_DATOS;
 DIRECCIONES <= ww_DIRECCIONES;
 RW <= ww_RW;
 ESTADOS <= ww_ESTADOS;
@@ -539,11 +536,10 @@ ww_devpor <= devpor;
 
 \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ <= (\~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\);
 
-\ARST~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \ARST~input_o\);
+\NARST~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \NARST~input_o\);
 
 \CLK~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \CLK~input_o\);
 \U14|ALT_INV_UC_OUT_RW~combout\ <= NOT \U14|UC_OUT_RW~combout\;
-\ALT_INV_ARST~inputclkctrl_outclk\ <= NOT \ARST~inputclkctrl_outclk\;
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,
@@ -938,7 +934,7 @@ PORT MAP (
 	cout => \U6|PC[0]~11\);
 
 -- Location: IOIBUF_X0_Y18_N22
-\ARST~input\ : fiftyfivenm_io_ibuf
+\NARST~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
@@ -946,21 +942,21 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_ARST,
-	o => \ARST~input_o\);
+	i => ww_NARST,
+	o => \NARST~input_o\);
 
 -- Location: CLKCTRL_G4
-\ARST~inputclkctrl\ : fiftyfivenm_clkctrl
+\NARST~inputclkctrl\ : fiftyfivenm_clkctrl
 -- pragma translate_off
 GENERIC MAP (
 	clock_type => "global clock",
 	ena_register_mode => "none")
 -- pragma translate_on
 PORT MAP (
-	inclk => \ARST~inputclkctrl_INCLK_bus\,
+	inclk => \NARST~inputclkctrl_INCLK_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	outclk => \ARST~inputclkctrl_outclk\);
+	outclk => \NARST~inputclkctrl_outclk\);
 
 -- Location: LCCOMB_X34_Y35_N20
 \U13|cuenta~0\ : fiftyfivenm_lcell_comb
@@ -1014,7 +1010,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U13|cuenta~0_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U13|cuenta[0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -1046,7 +1042,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U13|cuenta~2_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U13|cuenta[0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -1094,7 +1090,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U13|cuenta~5_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U13|cuenta[0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -1158,7 +1154,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U9|MBR_SIG\(0),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U14|X\(0),
 	devclrn => ww_devclrn,
@@ -1838,7 +1834,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U7|Mux2~1_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U17|OR4_OUT~0_combout\,
 	devclrn => ww_devclrn,
@@ -1918,7 +1914,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U7|Mux1~1_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U17|OR4_OUT~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -2214,7 +2210,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U0|ALU_OUT[7]~5_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U14|X\(19),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -2399,7 +2395,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U0|ALU_OUT[0]~13_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U14|X\(19),
 	devclrn => ww_devclrn,
@@ -2500,7 +2496,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U0|ALU_OUT[1]~30_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U14|X\(19),
 	devclrn => ww_devclrn,
@@ -2601,7 +2597,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U0|ALU_OUT[2]~26_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U14|X\(19),
 	devclrn => ww_devclrn,
@@ -2702,7 +2698,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U0|ALU_OUT[3]~34_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U14|X\(19),
 	devclrn => ww_devclrn,
@@ -2809,7 +2805,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U0|ALU_OUT[6]~35_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U14|X\(19),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -2890,7 +2886,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U0|ALU_OUT[5]~9_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U14|X\(19),
 	devclrn => ww_devclrn,
@@ -2973,7 +2969,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U0|ALU_OUT[4]~22_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U14|X\(19),
 	devclrn => ww_devclrn,
@@ -3024,7 +3020,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U7|Mux3~1_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U17|OR4_OUT~0_combout\,
 	devclrn => ww_devclrn,
@@ -3190,7 +3186,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U6|PC[4]~19_combout\,
 	asdata => \U9|MBR_SIG\(4),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U14|X\(5),
 	ena => \U6|PC[3]~12_combout\,
 	devclrn => ww_devclrn,
@@ -3226,7 +3222,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U6|PC[5]~21_combout\,
 	asdata => \U9|MBR_SIG\(5),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U14|X\(5),
 	ena => \U6|PC[3]~12_combout\,
 	devclrn => ww_devclrn,
@@ -3262,7 +3258,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U6|PC[6]~23_combout\,
 	asdata => \U9|MBR_SIG\(6),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U14|X\(5),
 	ena => \U6|PC[3]~12_combout\,
 	devclrn => ww_devclrn,
@@ -3343,7 +3339,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U7|Mux0~1_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U17|OR4_OUT~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -3360,7 +3356,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U6|PC[7]~25_combout\,
 	asdata => \U9|MBR_SIG\(7),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U14|X\(5),
 	ena => \U6|PC[3]~12_combout\,
 	devclrn => ww_devclrn,
@@ -3539,7 +3535,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U3|MBRAUX_SIG[0]~feeder_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U14|X\(10),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -3556,7 +3552,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U6|PC[8]~27_combout\,
 	asdata => \U3|MBRAUX_SIG\(0),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U14|X\(5),
 	ena => \U6|PC[3]~12_combout\,
 	devclrn => ww_devclrn,
@@ -3602,7 +3598,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U3|MBRAUX_SIG[1]~feeder_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U14|X\(10),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -3619,7 +3615,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U6|PC[9]~29_combout\,
 	asdata => \U3|MBRAUX_SIG\(1),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U14|X\(5),
 	ena => \U6|PC[3]~12_combout\,
 	devclrn => ww_devclrn,
@@ -3670,7 +3666,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U7|Mux6~1_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U17|OR4_OUT~0_combout\,
 	devclrn => ww_devclrn,
@@ -3687,7 +3683,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U9|MBR_SIG\(1),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U14|X\(0),
 	devclrn => ww_devclrn,
@@ -4020,7 +4016,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U0|tmp\(7),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U14|X\(19),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -4084,7 +4080,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U0|ALU_OUT_C~1_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U14|X\(19),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -4213,7 +4209,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U6|PC[0]~10_combout\,
 	asdata => \U9|MBR_SIG\(0),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U14|X\(5),
 	ena => \U6|PC[3]~12_combout\,
 	devclrn => ww_devclrn,
@@ -4249,7 +4245,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U6|PC[1]~13_combout\,
 	asdata => \U9|MBR_SIG\(1),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U14|X\(5),
 	ena => \U6|PC[3]~12_combout\,
 	devclrn => ww_devclrn,
@@ -4285,7 +4281,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U6|PC[2]~15_combout\,
 	asdata => \U9|MBR_SIG\(2),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U14|X\(5),
 	ena => \U6|PC[3]~12_combout\,
 	devclrn => ww_devclrn,
@@ -4303,7 +4299,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U6|PC[3]~17_combout\,
 	asdata => \U9|MBR_SIG\(3),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U14|X\(5),
 	ena => \U6|PC[3]~12_combout\,
 	devclrn => ww_devclrn,
@@ -4366,7 +4362,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U7|Mux4~1_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U17|OR4_OUT~0_combout\,
 	devclrn => ww_devclrn,
@@ -4383,7 +4379,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U9|MBR_SIG\(3),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U14|X\(0),
 	devclrn => ww_devclrn,
@@ -4796,7 +4792,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U13|cuenta~3_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U13|cuenta[0]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -5520,7 +5516,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U7|Mux5~1_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U17|OR4_OUT~0_combout\,
 	devclrn => ww_devclrn,
@@ -5537,7 +5533,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U9|MBR_SIG\(2),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U14|X\(0),
 	devclrn => ww_devclrn,
@@ -5679,7 +5675,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	asdata => \U7|Mux7~1_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => VCC,
 	ena => \U17|OR4_OUT~0_combout\,
 	devclrn => ww_devclrn,
@@ -6019,7 +6015,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U5|SP[0]~8_combout\,
 	asdata => \U9|MBR_SIG\(0),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U5|SP[2]~10_combout\,
 	ena => \U5|SP[2]~11_combout\,
 	devclrn => ww_devclrn,
@@ -6327,7 +6323,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U12|MAR_SIG[0]~0_combout\,
 	asdata => \U9|MBR_SIG\(0),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U15|OR2_OUT~0_combout\,
 	ena => \U16|OR3_OUT~combout\,
 	devclrn => ww_devclrn,
@@ -6364,7 +6360,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U5|SP[1]~12_combout\,
 	asdata => \U9|MBR_SIG\(1),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U5|SP[2]~10_combout\,
 	ena => \U5|SP[2]~11_combout\,
 	devclrn => ww_devclrn,
@@ -6398,7 +6394,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U12|MAR_SIG[1]~1_combout\,
 	asdata => \U9|MBR_SIG\(1),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U15|OR2_OUT~0_combout\,
 	ena => \U16|OR3_OUT~combout\,
 	devclrn => ww_devclrn,
@@ -6435,7 +6431,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U5|SP[2]~14_combout\,
 	asdata => \U9|MBR_SIG\(2),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U5|SP[2]~10_combout\,
 	ena => \U5|SP[2]~11_combout\,
 	devclrn => ww_devclrn,
@@ -6469,7 +6465,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U12|MAR_SIG[2]~2_combout\,
 	asdata => \U9|MBR_SIG\(2),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U15|OR2_OUT~0_combout\,
 	ena => \U16|OR3_OUT~combout\,
 	devclrn => ww_devclrn,
@@ -6506,7 +6502,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U5|SP[3]~16_combout\,
 	asdata => \U9|MBR_SIG\(3),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U5|SP[2]~10_combout\,
 	ena => \U5|SP[2]~11_combout\,
 	devclrn => ww_devclrn,
@@ -6540,7 +6536,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U12|MAR_SIG[3]~3_combout\,
 	asdata => \U9|MBR_SIG\(3),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U15|OR2_OUT~0_combout\,
 	ena => \U16|OR3_OUT~combout\,
 	devclrn => ww_devclrn,
@@ -6577,7 +6573,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U5|SP[4]~18_combout\,
 	asdata => \U9|MBR_SIG\(4),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U5|SP[2]~10_combout\,
 	ena => \U5|SP[2]~11_combout\,
 	devclrn => ww_devclrn,
@@ -6611,7 +6607,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U12|MAR_SIG[4]~4_combout\,
 	asdata => \U9|MBR_SIG\(4),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U15|OR2_OUT~0_combout\,
 	ena => \U16|OR3_OUT~combout\,
 	devclrn => ww_devclrn,
@@ -6648,7 +6644,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U5|SP[5]~20_combout\,
 	asdata => \U9|MBR_SIG\(5),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U5|SP[2]~10_combout\,
 	ena => \U5|SP[2]~11_combout\,
 	devclrn => ww_devclrn,
@@ -6682,7 +6678,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U12|MAR_SIG[5]~5_combout\,
 	asdata => \U9|MBR_SIG\(5),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U15|OR2_OUT~0_combout\,
 	ena => \U16|OR3_OUT~combout\,
 	devclrn => ww_devclrn,
@@ -6719,7 +6715,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U5|SP[6]~22_combout\,
 	asdata => \U9|MBR_SIG\(6),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U5|SP[2]~10_combout\,
 	ena => \U5|SP[2]~11_combout\,
 	devclrn => ww_devclrn,
@@ -6753,7 +6749,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U12|MAR_SIG[6]~6_combout\,
 	asdata => \U9|MBR_SIG\(6),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U15|OR2_OUT~0_combout\,
 	ena => \U16|OR3_OUT~combout\,
 	devclrn => ww_devclrn,
@@ -6787,7 +6783,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U5|SP[7]~24_combout\,
 	asdata => \U9|MBR_SIG\(7),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U5|SP[2]~10_combout\,
 	ena => \U5|SP[2]~11_combout\,
 	devclrn => ww_devclrn,
@@ -6821,7 +6817,7 @@ PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U12|MAR_SIG[7]~7_combout\,
 	asdata => \U9|MBR_SIG\(7),
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	sload => \U15|OR2_OUT~0_combout\,
 	ena => \U16|OR3_OUT~combout\,
 	devclrn => ww_devclrn,
@@ -6855,7 +6851,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U10|MUX1_OUT[8]~0_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U16|OR3_OUT~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -6888,7 +6884,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
 	d => \U10|MUX1_OUT[9]~1_combout\,
-	clrn => \ALT_INV_ARST~inputclkctrl_outclk\,
+	clrn => \NARST~inputclkctrl_outclk\,
 	ena => \U16|OR3_OUT~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
