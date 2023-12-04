@@ -6,7 +6,7 @@ use IEEE.std_logic_unsigned.all;
 
 entity MPU is
 	generic(n:integer:=8; m:integer:=10; p:integer:=4);
-	port(CLK,ARST,SRST,CE_CONT: in std_logic;
+	port(CLK,ARST,CE_CONT: in std_logic;
 			DATOS: inout std_logic_vector(n-1 downto 0);
 			DIRECCIONES: out std_logic_vector(m-1 downto 0);
 			RW: out std_logic;
@@ -27,32 +27,32 @@ architecture estructural of MPU is
 
 	component ACC
 		port(ACC_IN_ALU: in std_logic_vector(n-1 downto 0);
-				CE,ARST,SRST,CLK: in std_logic;
+				CE,ARST,CLK: in std_logic;
 				ACC_OUT: out std_logic_vector(n-1 downto 0));
 	end component;
 		
 	component CCR
 		port(CCR_IN_Z: in std_logic;
 				CCR_IN_C: in std_logic;
-				CE,ARST,SRST,CLK: in std_logic;
+				CE,ARST,CLK: in std_logic;
 				CCR_OUT_C,CCR_OUT_Z: out std_logic);
 	end component;
 
 	component MBRAUX
 		port(MBRAUX_IN_MBR: in std_logic_vector(n-1 downto 0);
-				CE,ARST,SRST,CLK: in std_logic;
+				CE,ARST,CLK: in std_logic;
 				MBRAUX_OUT: out std_logic_vector(1 downto 0));
 	end component;
 
 	component IR
 		port(IR_IN_MBR: in std_logic_vector(n-1 downto 0);
-				CE,ARST,SRST,CLK: in std_logic;
+				CE,ARST,CLK: in std_logic;
 				IR_OUT: out std_logic_vector(p-1 downto 0));
 	end component;
 	
 	component SP
 		port(SP_IN_MBR: in std_logic_vector(n-1 downto 0);
-				ARST,CLK,SRST,DEC_SP,INC_SP,LOAD_SP: in std_logic;
+				ARST,CLK,DEC_SP,INC_SP,LOAD_SP: in std_logic;
 				SP_OUT: out std_logic_vector(m-1 downto 0));
 	end component;
 	
@@ -64,7 +64,7 @@ architecture estructural of MPU is
 	component PC
 		port(PCH_IN: in std_logic_vector(1 downto 0);
 				PCL_IN: in std_logic_vector(n-1 downto 0);
-				CLK,ARST,SRST,INC_PC,LOAD_PC: in std_logic;
+				CLK,ARST,INC_PC,LOAD_PC: in std_logic;
 				PC_OUT: out std_logic_vector(m-1 downto 0));
 	end component;
 	
@@ -88,13 +88,13 @@ architecture estructural of MPU is
 	
 	component MBR
 		port(MBR_IN_MUX3: in std_logic_vector(n-1 downto 0);
-				CLK,CE,ARST,SRST: in std_logic;
+				CLK,CE,ARST: in std_logic;
 				MBR_OUT: out std_logic_vector(n-1 downto 0));
 	end component;
 	
 	component MAR
 		port(MAR_IN_MUX1: in std_logic_vector(m-1 downto 0);
-				CLK,CE,ARST,SRST: in std_logic;
+				CLK,CE,ARST: in std_logic;
 				MAR_OUT: out std_logic_vector(m-1 downto 0));
 	end component;
 	
@@ -173,31 +173,31 @@ begin
 	
 	U0: ALU PORT MAP(ALU_IN_ACC=>SAL_ACC, ALU_IN_MBR=>SAL_MBR,S=>SELEC_ALU,ALU_OUT_Z=>SAL_ALU_Z,ALU_OUT_C=>SAL_ALU_C,ALU_OUT=>SAL_ALU); --BIEN
 	
-	U1: ACC PORT MAP(ACC_IN_ALU=>SAL_ALU,CE=>X(19),ARST=>ARST,SRST=>SRST,CLK=>CLK,ACC_OUT=>SAL_ACC); --BIEN
+	U1: ACC PORT MAP(ACC_IN_ALU=>SAL_ALU,CE=>X(19),ARST=>ARST,CLK=>CLK,ACC_OUT=>SAL_ACC); --BIEN
 	
-	U2: CCR PORT MAP(CCR_IN_Z=>SAL_ALU_Z,CCR_IN_C=>SAL_ALU_C,CE=>X(19),ARST=>ARST,SRST=>SRST,CLK=>CLK,CCR_OUT_C=>SAL_CCR_C,CCR_OUT_Z=>SAL_CCR_Z); --BIEN
+	U2: CCR PORT MAP(CCR_IN_Z=>SAL_ALU_Z,CCR_IN_C=>SAL_ALU_C,CE=>X(19),ARST=>ARST,CLK=>CLK,CCR_OUT_C=>SAL_CCR_C,CCR_OUT_Z=>SAL_CCR_Z); --BIEN
 	
-	U3: MBRAUX PORT MAP(MBRAUX_IN_MBR=>SAL_MBR,CE=>X(10),ARST=>ARST,SRST=>SRST,CLK=>CLK,MBRAUX_OUT=>SAL_MBRAUX); --BIEN
+	U3: MBRAUX PORT MAP(MBRAUX_IN_MBR=>SAL_MBR,CE=>X(10),ARST=>ARST,CLK=>CLK,MBRAUX_OUT=>SAL_MBRAUX); --BIEN
 	
-	U4: IR PORT MAP(IR_IN_MBR=>SAL_MBR,CE=>X(0),ARST=>ARST,SRST=>SRST,CLK=>CLK,IR_OUT=>SAL_IR); --BIEN
+	U4: IR PORT MAP(IR_IN_MBR=>SAL_MBR,CE=>X(0),ARST=>ARST,CLK=>CLK,IR_OUT=>SAL_IR); --BIEN
 	
-	U5: SP PORT MAP(SP_IN_MBR=>SAL_MBR,ARST=>ARST,CLK=>CLK,SRST=>SRST,DEC_SP=>X(13),INC_SP=>X(12),LOAD_SP=>X(11),SP_OUT=>SAL_SP); --BIEN
+	U5: SP PORT MAP(SP_IN_MBR=>SAL_MBR,ARST=>ARST,CLK=>CLK,DEC_SP=>X(13),INC_SP=>X(12),LOAD_SP=>X(11),SP_OUT=>SAL_SP); --BIEN
 	
-	U6: PC PORT MAP(PCH_IN=>SAL_MBRAUX,PCL_IN=>SAL_MBR,CLK=>CLK,ARST=>ARST,SRST=>SRST,INC_PC=>X(6),LOAD_PC=>X(5),PC_OUT=>SAL_PC); --BIEN
+	U6: PC PORT MAP(PCH_IN=>SAL_MBRAUX,PCL_IN=>SAL_MBR,CLK=>CLK,ARST=>ARST,INC_PC=>X(6),LOAD_PC=>X(5),PC_OUT=>SAL_PC); --BIEN
 	
 	U7: MUX3 PORT MAP(MUX3_IN_PCL=>PCL_MUX3,MUX3_IN_PCH=>PCH_MUX3,MUX3_IN_DATOS=>DATOS,MUX3_IN_ACC=>SAL_ACC,S=>SELEC_MUX3,MUX3_OUT=>SAL_MUX3); --BIEN
 	
 	U8: MUX2 PORT MAP(MUX2_IN_SP=>SAL_SP,MUX2_IN_PC=>SAL_PC,S=>X(9),MUX2_OUT=>SAL_MUX2); --BIEN
 
-	U9: MBR PORT MAP(MBR_IN_MUX3=>SAL_MUX3,CLK=>CLK,CE=>SAL_OR4_MBR,ARST=>ARST,SRST=>SRST,MBR_OUT=>SAL_MBR); --BIEN
+	U9: MBR PORT MAP(MBR_IN_MUX3=>SAL_MUX3,CLK=>CLK,CE=>SAL_OR4_MBR,ARST=>ARST,MBR_OUT=>SAL_MBR); --BIEN
 
 	U10: MUX1 PORT MAP(MUX1_IN_MUX2=>SAL_MUX2,MUX1_IN_MBR=>MBRS,S=>SAL_OR2_MUX1,MUX1_OUT=>SAL_MUX1); --BIEN
 
 	U11: BUFFER_TRI PORT MAP(BUF_IN_MBR=>SAL_MBR,BUF_RW=>SIG_RW,BUF_OUT=>DATOS); --BIEN
 
-	U12: MAR PORT MAP(MAR_IN_MUX1=>SAL_MUX1,CE=>SAL_OR3_MAR,ARST=>ARST,SRST=>SRST,CLK=>CLK,MAR_OUT=>DIRECCIONES); --BIEN
+	U12: MAR PORT MAP(MAR_IN_MUX1=>SAL_MUX1,CE=>SAL_OR3_MAR,ARST=>ARST,CLK=>CLK,MAR_OUT=>DIRECCIONES); --BIEN
 
-	U13: CONTADOR PORT MAP(CLK=>CLK,CE=>CE_CONT,ARST=>ARST,SRST=>X(14),CONT_OUT=>SAL_CONT); -- SRST?
+	U13: CONTADOR PORT MAP(CLK=>CLK,CE=>CE_CONT,ARST=>ARST,SRST=>X(14),CONT_OUT=>SAL_CONT); -- SRST
 
 	U14: UC PORT MAP(UC_IN_IR=>SAL_IR,UC_IN_CONT=>SAL_CONT,UC_IN_FLAGC=>SAL_CCR_C,UC_IN_FLAGZ=>SAL_CCR_Z,UC_OUT=>X,UC_OUT_RW=>SIG_RW); -- BIEN
 
