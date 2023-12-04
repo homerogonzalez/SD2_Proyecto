@@ -13,15 +13,16 @@ end IR;
 architecture behavioral of IR is
 signal IR_SIG: std_logic_vector(n-1 downto 0);
 begin
-        process(CLK,ARST,CE)
+        process(CLK,ARST,CE,IR_IN_MBR,IR_SIG)
         begin
             if (ARST = '1') then 
                 IR_SIG <= (others => '0');
             elsif (rising_edge(CLK)) then
                 if (CE = '1') then
-                    IR_SIG <= IR_IN_MBR;
+--                      IR_SIG <= IR_IN_MBR;
+                    IR_OUT<=IR_IN_MBR(p-1 downto 0);
                 end if;
             end if;
         end process;
-        IR_OUT<=IR_SIG(p-1 downto 0);
-end architecture;
+--        IR_OUT<=IR_SIG(p-1 downto 0);
+end behavioral;

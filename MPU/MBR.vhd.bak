@@ -13,7 +13,7 @@ end MBR;
 architecture behavioral of MBR is
 signal MBR_SIG: std_logic_vector(n-1 downto 0);
 begin
-	process(CLK,ARST,MBR_IN_MUX3,CE,MBR_SIG)
+	process(CLK,ARST,MBR_SIG)
 	begin
 		if (ARST = '1') then 
             MBR_SIG <= (others => '0');
@@ -24,5 +24,5 @@ begin
 		end if;
 	end process;
 	MBR_OUT<=MBR_SIG;
-end behavioral;
+end architecture;
 

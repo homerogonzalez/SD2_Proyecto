@@ -13,7 +13,7 @@ end ACC;
 architecture behavioral of ACC is
 signal ACC: std_logic_vector(n-1 downto 0);
 begin
-        process(CLK,ARST,CE,ACC_IN_ALU,ACC)
+        process(CLK,ARST,CE,ACC)
         begin
             if (ARST = '1') then 
                 ACC <= (others => '0');
@@ -24,4 +24,4 @@ begin
             end if;
         end process;
         ACC_OUT<=ACC;
-end behavioral;
+end architecture;

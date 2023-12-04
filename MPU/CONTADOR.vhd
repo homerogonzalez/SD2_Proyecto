@@ -19,11 +19,13 @@ begin
 		elsif (rising_edge(CLK)) then
 			if (SRST = '1') then
 				cuenta <= (others => '0');
-			elsif (CE = '1') then
+			else
+				if (CE = '1') then
 				cuenta <= cuenta+1;
+				end if;
 			end if;
 		end if;
 	end process;
 	CONT_OUT<=cuenta;
-end architecture;
+end behavioral;
 	

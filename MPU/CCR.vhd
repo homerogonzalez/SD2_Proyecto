@@ -14,7 +14,7 @@ architecture behavioral of CCR is
 signal CCRZ: std_logic;
 signal CCRC: std_logic;
 begin
-        process(CLK,ARST,CE,CCR_IN_C,CCR_IN_Z)
+        process(CLK,ARST,CE,CCR_IN_C,CCR_IN_Z,CCRZ,CCRC)
         begin
             if (ARST = '1') then 
                 CCRC <= '0';
@@ -28,4 +28,4 @@ begin
         end process;
         CCR_OUT_C<=CCRC;
         CCR_OUT_Z<=CCRZ;
-end architecture;
+end behavioral;

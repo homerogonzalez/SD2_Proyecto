@@ -13,7 +13,7 @@ end MBRAUX;
 architecture behavioral of MBRAUX is
 signal MBRAUX_SIG: std_logic_vector(n-1 downto 0);
 begin
-        process(CLK,ARST,CE,MBRAUX_IN_MBR,MBRAUX_SIG)
+        process(CLK,ARST,CE,MBRAUX_IN_MBR)
         begin
             if (ARST = '1') then 
                 MBRAUX_SIG <= (others => '0');
@@ -24,4 +24,4 @@ begin
             end if;
         end process;
         MBRAUX_OUT<=MBRAUX_SIG(1 downto 0);
-end behavioral;
+    end architecture;

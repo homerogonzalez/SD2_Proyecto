@@ -14,7 +14,7 @@ end MAR;
 architecture behavioral of MAR is
 signal MAR_SIG: std_logic_vector(m-1 downto 0);
 begin
-	process(CLK,ARST,MAR_SIG)
+	process(CLK,ARST,MAR_IN_MUX1,CE,MAR_SIG)
 	begin
 		if (ARST = '1') then 
             MAR_SIG <= (others => '0');
@@ -25,4 +25,4 @@ begin
 		end if;
 	end process;
 	MAR_OUT<=MAR_SIG;
-end architecture;
+end behavioral;

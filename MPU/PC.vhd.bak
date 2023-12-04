@@ -16,7 +16,7 @@ signal PC: std_logic_vector(m-1 downto 0);
 signal x: std_logic_vector(1 downto 0);
 begin
 x <= LOAD_PC&INC_PC;
-	process(CLK,ARST,x,PCH_IN,PCL_IN,PC)
+	process(CLK,ARST,x)
 	begin
 		if (ARST = '1') then 
 			PC <= (others => '0');
@@ -29,6 +29,6 @@ x <= LOAD_PC&INC_PC;
 		end if;
 	end process;
 	PC_OUT <= PC;
-end behavioral;
+end architecture;
 	
 	

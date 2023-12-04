@@ -59,28 +59,9 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VHDL_FILE MBR.vhd
-set_global_assignment -name VHDL_FILE OR_4.vhd
-set_global_assignment -name VHDL_FILE OR_3.vhd
-set_global_assignment -name VHDL_FILE OR_2.vhd
-set_global_assignment -name VHDL_FILE UC.vhd
-set_global_assignment -name VHDL_FILE SP.vhd
-set_global_assignment -name VHDL_FILE PC.vhd
-set_global_assignment -name VHDL_FILE MUX3.vhd
-set_global_assignment -name VHDL_FILE MUX2.vhd
-set_global_assignment -name VHDL_FILE MUX1.vhd
-set_global_assignment -name VHDL_FILE MBRAUX.vhd
-set_global_assignment -name VHDL_FILE MAR.vhd
-set_global_assignment -name VHDL_FILE IR.vhd
-set_global_assignment -name VHDL_FILE CONTADOR.vhd
-set_global_assignment -name VHDL_FILE CCR.vhd
-set_global_assignment -name VHDL_FILE BUFFER_TRI.vhd
-set_global_assignment -name VHDL_FILE ACC.vhd
-set_global_assignment -name VHDL_FILE MPU.vhd
-set_global_assignment -name VHDL_FILE ALU.vhd
 set_location_assignment PIN_B8 -to NARST
 set_location_assignment PIN_F15 -to CE_CONT
-set_location_assignment PIN_C10 -to CLK
+set_location_assignment PIN_AB3 -to CLK
 set_location_assignment PIN_B11 -to TIEMPOS[3]
 set_location_assignment PIN_A11 -to TIEMPOS[2]
 set_location_assignment PIN_D14 -to TIEMPOS[1]
@@ -178,4 +159,23 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to X_DISP[5]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to X_DISP[4]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to X_DISP[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to X_DISP[2]
+set_global_assignment -name VHDL_FILE MBR.vhd
+set_global_assignment -name VHDL_FILE OR_4.vhd
+set_global_assignment -name VHDL_FILE OR_3.vhd
+set_global_assignment -name VHDL_FILE OR_2.vhd
+set_global_assignment -name VHDL_FILE UC.vhd
+set_global_assignment -name VHDL_FILE SP.vhd
+set_global_assignment -name VHDL_FILE PC.vhd
+set_global_assignment -name VHDL_FILE MUX3.vhd
+set_global_assignment -name VHDL_FILE MUX2.vhd
+set_global_assignment -name VHDL_FILE MUX1.vhd
+set_global_assignment -name VHDL_FILE MBRAUX.vhd
+set_global_assignment -name VHDL_FILE MAR.vhd
+set_global_assignment -name VHDL_FILE IR.vhd
+set_global_assignment -name VHDL_FILE CONTADOR.vhd
+set_global_assignment -name VHDL_FILE CCR.vhd
+set_global_assignment -name VHDL_FILE BUFFER_TRI.vhd
+set_global_assignment -name VHDL_FILE ACC.vhd
+set_global_assignment -name VHDL_FILE MPU.vhd
+set_global_assignment -name VHDL_FILE ALU.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

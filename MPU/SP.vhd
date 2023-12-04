@@ -16,7 +16,7 @@ signal SP: std_logic_vector(n-1 downto 0);
 signal x: std_logic_vector(2 downto 0);
 begin
 x <= LOAD_SP&INC_SP&DEC_SP;
-	process(CLK,ARST,x)
+	process(CLK,ARST,x,SP_IN_MBR,SP)
 	begin
 		if (ARST = '1') then 
 			SP <= (others => '0');
@@ -30,5 +30,5 @@ x <= LOAD_SP&INC_SP&DEC_SP;
 		end if;
 	end process;
 	SP_OUT<="10"&SP;
-end architecture;
+end behavioral;
 	

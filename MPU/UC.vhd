@@ -8,6 +8,7 @@ entity UC is
 	port(--entradas
 		UC_IN_FLAGC,UC_IN_FLAGZ: in std_logic;
 		UC_IN_IR,UC_IN_CONT: in std_logic_vector(3 downto 0);
+		CLK: in std_logic;
 		--salidas
 		UC_OUT: out std_logic_vector(0 to 19);
 		UC_OUT_RW: out std_logic);
@@ -20,7 +21,7 @@ UC_OUT<=X;
 
 	process(UC_IN_FLAGC,UC_IN_FLAGZ,UC_IN_IR,UC_IN_CONT,X)
 	begin
-	
+	if (rising_edge(CLK)) then
 		--ciclo fetch
 		if UC_IN_CONT="0000" AND std_match(UC_IN_IR,"----") then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
@@ -207,40 +208,40 @@ UC_OUT<=X;
 
 	
 			-- 	*JC DIR 			0Ch	
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="1100" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="1100" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="1100" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000001000000000";UC_OUT_RW<='1';	--MBRaux ← MBR;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="1100" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="1100" then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
 		elsif UC_IN_CONT="1000" AND UC_IN_IR="1100" AND UC_IN_FLAGC='1' then
 			X<="00000100000000000000";UC_OUT_RW<='1';	--PC ← MBRaux:MBR;
 		elsif UC_IN_CONT="1000" AND UC_IN_IR="1100" AND UC_IN_FLAGC='0' then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="1100" then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 	
 	
 			-- 	*JZ DIR 			0Dh	
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="1101" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="1101" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="1101" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000000001000000000";UC_OUT_RW<='1';	--MBRaux ← MBR;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="1101" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="1101" then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
 		elsif UC_IN_CONT="1000" AND UC_IN_IR="1101" AND UC_IN_FLAGZ='1' then
 			X<="00000100000000000000";UC_OUT_RW<='1';	--PC ← MBRaux:MBR;
 		elsif UC_IN_CONT="1000" AND UC_IN_IR="1101" AND UC_IN_FLAGZ='0' then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="1101" then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 			
 			
@@ -292,6 +293,7 @@ UC_OUT<=X;
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 			
 		end if;
+	end if;
 	end process;
-end architecture;
+end behavioral;
 	
