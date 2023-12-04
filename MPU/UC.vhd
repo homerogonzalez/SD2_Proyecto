@@ -8,7 +8,7 @@ entity UC is
 	port(--entradas
 		UC_IN_FLAGC,UC_IN_FLAGZ: in std_logic;
 		UC_IN_IR,UC_IN_CONT: in std_logic_vector(3 downto 0);
-		CLK: in std_logic;
+		--CLK: in std_logic;
 		--salidas
 		UC_OUT: out std_logic_vector(0 to 19);
 		UC_OUT_RW: out std_logic);
@@ -21,279 +21,279 @@ UC_OUT<=X;
 
 	process(UC_IN_FLAGC,UC_IN_FLAGZ,UC_IN_IR,UC_IN_CONT,X)
 	begin
-	if (rising_edge(CLK)) then
+	--if (rising_edge(CLK)) then
 		--ciclo fetch
-		if UC_IN_CONT="0000" AND std_match(UC_IN_IR,"----") then
+		if UC_IN_CONT="0000" AND std_match(UC_IN_IR,"----") AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0001" AND std_match(UC_IN_IR,"----") then
+		elsif UC_IN_CONT="0001" AND std_match(UC_IN_IR,"----") AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1'; 	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0010" AND std_match(UC_IN_IR,"----") then
+		elsif UC_IN_CONT="0010" AND std_match(UC_IN_IR,"----") AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="10000000000000000000";UC_OUT_RW<='1'; 	--IR ← MBR; 
 
 
 		-- 	MOV A,N   		00h
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="0000" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="0000" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1'; 	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="0000" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="0000" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1'; 	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="0000" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="0000" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000011101";UC_OUT_RW<='1';	--ACC ← MBR, CCR ← FLAGS;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="0000" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="0000" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 		
 
 		-- 	XOR A,N 			01h
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="0001" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="0001" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1'; --MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="0001" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="0001" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1'; --MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="0001" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="0001" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000001101";UC_OUT_RW<='1';	--ACC ← ACC ^ MBR, CCR ← FLAGS;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="0001" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="0001" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 
 
 		--		*MOV SP, N 		02h	
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="0010" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="0010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="0010" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="0010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="0010" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="0010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000100000000";UC_OUT_RW<='1';	--SP ← MBR;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="0010" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="0010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 
 
 		--		MOV A, [DIR] 	03h
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="0011" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="0011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="0011" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="0011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="0011" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="0011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000001000000000";UC_OUT_RW<='1';	--MBRaux ← MBR;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="0011" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="0011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="0011" then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="0011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="0011" then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="0011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000001000000000000";UC_OUT_RW<='1';	--MAR ← MBRaux:MBR;
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="0011" then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="0011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
-		elsif UC_IN_CONT="1010" AND UC_IN_IR="0011" then
+		elsif UC_IN_CONT="1010" AND UC_IN_IR="0011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000011101";UC_OUT_RW<='1';	--ACC ← MBR, CCR ← FLAGS;
-		elsif UC_IN_CONT="1011" AND UC_IN_IR="0011" then
+		elsif UC_IN_CONT="1011" AND UC_IN_IR="0011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 
 			
 		--		ADD A, [DIR] 	04h
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="0100" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="0100" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="0100" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="0100" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="0100" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="0100" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000001000000000";UC_OUT_RW<='1';	--MBRaux ← MBR;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="0100" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="0100" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="0100" then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="0100" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="0100" then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="0100" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000001000000000000";UC_OUT_RW<='1';	--MAR ← MBRaux:MBR;
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="0100" then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="0100" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
-		elsif UC_IN_CONT="1010" AND UC_IN_IR="0100" then
+		elsif UC_IN_CONT="1010" AND UC_IN_IR="0100" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000000001";UC_OUT_RW<='1';	--ACC ← ACC + MBR, CCR ← FLAGS;
-		elsif UC_IN_CONT="1011" AND UC_IN_IR="0100" then
+		elsif UC_IN_CONT="1011" AND UC_IN_IR="0100" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 
 
 			--		AND A, [DIR] 	05h
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="0101" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="0101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="0101" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="0101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="0101" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="0101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000001000000000";UC_OUT_RW<='1';	--MBRaux ← MBR;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="0101" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="0101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="0101" then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="0101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="0101" then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="0101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000001000000000000";UC_OUT_RW<='1';	--MAR ← MBRaux:MBR;
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="0101" then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="0101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
-		elsif UC_IN_CONT="1010" AND UC_IN_IR="0101" then
+		elsif UC_IN_CONT="1010" AND UC_IN_IR="0101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000010001";UC_OUT_RW<='1';	--ACC ← ACC & MBR, CCR ← FLAGS;
-		elsif UC_IN_CONT="1011" AND UC_IN_IR="0101" then
+		elsif UC_IN_CONT="1011" AND UC_IN_IR="0101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 	
 	
 			--		OR A, [DIR] 	06h
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="0110" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="0110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="0110" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="0110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="0110" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="0110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000001000000000";UC_OUT_RW<='1';	--MBRaux ← MBR;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="0110" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="0110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="0110" then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="0110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="0110" then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="0110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000001000000000000";UC_OUT_RW<='1';	--MAR ← MBRaux:MBR;
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="0110" then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="0110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
-		elsif UC_IN_CONT="1010" AND UC_IN_IR="0110" then
+		elsif UC_IN_CONT="1010" AND UC_IN_IR="0110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000001001";UC_OUT_RW<='1';	--ACC ← ACC | MBR, CCR ← FLAGS;
-		elsif UC_IN_CONT="1011" AND UC_IN_IR="0110" then
+		elsif UC_IN_CONT="1011" AND UC_IN_IR="0110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;			
 
 
 			--		NOT A				07h
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="0111" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="0111" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000011001";UC_OUT_RW<='1';	--ACC ← NOT(ACC), CCR ← FLAGS;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="0111" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="0111" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 	
 	
 			--		LSL A				08h
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="1000" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="1000" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000010101";UC_OUT_RW<='1';	--ACC ← (UC_IN_FLAGC<-ACC<-0), CCR ← FLAGS;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="1000" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="1000" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 			
 			
 			--		LSR A				09h
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="1001" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="1001" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000000101";UC_OUT_RW<='1';	--ACC ← (0->ACC->UC_IN_FLAGC), CCR ← FLAGS;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="1001" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="1001" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 	
 	
 			--		*MOV [DIR], A 	0Ah	
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="1010" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="1010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="1010" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="1010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="1010" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="1010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000001000000000";UC_OUT_RW<='1';	--MBRaux ← MBR;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="1010" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="1010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="1010" then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="1010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="1010" then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="1010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000001000000000000";UC_OUT_RW<='1';	--MAR ← MBRaux:MBR;
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="1010" then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="1010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="01000000000000000000";UC_OUT_RW<='1';	--MBR ← ACC;
-		elsif UC_IN_CONT="1010" AND UC_IN_IR="1010" then
+		elsif UC_IN_CONT="1010" AND UC_IN_IR="1010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000000000";UC_OUT_RW<='0';	--M[DIR] ← MBR;
-		elsif UC_IN_CONT="1011" AND UC_IN_IR="1010" then
+		elsif UC_IN_CONT="1011" AND UC_IN_IR="1010" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 	
 	
 			-- 	JMP DIR 			0Bh	
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="1011" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="1011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="1011" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="1011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="1011" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="1011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000001000000000";UC_OUT_RW<='1';	--MBRaux ← MBR;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="1011" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="1011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="1011" then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="1011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="1011" then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="1011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000100000000000000";UC_OUT_RW<='1';	--PC ← MBRaux:MBR;
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="1011" then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="1011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 
 	
 			-- 	*JC DIR 			0Ch	
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000000001000000000";UC_OUT_RW<='1';	--MBRaux ← MBR;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="1100" AND UC_IN_FLAGC='1' then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="1100" AND UC_IN_FLAGC='1' AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000100000000000000";UC_OUT_RW<='1';	--PC ← MBRaux:MBR;
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="1100" AND UC_IN_FLAGC='0' then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="1100" AND UC_IN_FLAGC='0' AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 	
 	
 			-- 	*JZ DIR 			0Dh	
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000001000000000";UC_OUT_RW<='1';	--MBRaux ← MBR;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="1101" AND UC_IN_FLAGZ='1' then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="1101" AND UC_IN_FLAGZ='1' AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000100000000000000";UC_OUT_RW<='1';	--PC ← MBRaux:MBR;
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="1101" AND UC_IN_FLAGZ='0' then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="1101" AND UC_IN_FLAGZ='0' AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 			
 			
 			-- 	*JSR DIR 		0Eh
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000101000000000";UC_OUT_RW<='1';	--MBRaux ← MBR, MAR ← PC;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000000000011101";UC_OUT_RW<='1';	--ACC ← MBR, CCR ← FLAGS;
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000010000000000";UC_OUT_RW<='1';	--MAR ← SP;
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00010000000000000000";UC_OUT_RW<='1';	--MBR ← PCL;
-		elsif UC_IN_CONT="1010" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="1010" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000000001000000";UC_OUT_RW<='0';	--M[DIR] ← MBR, SP ← SP - 1;
-		elsif UC_IN_CONT="1011" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="1011" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00001000010000000000";UC_OUT_RW<='1';	--MAR ← SP, MBR ← PCH;
-		elsif UC_IN_CONT="1100" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="1100" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000000000000000";UC_OUT_RW<='0';	--M[DIR] ← MBR, SP ← SP - 1;
-		elsif UC_IN_CONT="1101" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="1101" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000000001000000";UC_OUT_RW<='1';	--MBR ← ACC;
-		elsif UC_IN_CONT="1110" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="1110" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="01000000000000000000";UC_OUT_RW<='1';	--PC ← MBRaux:MBR;
-		elsif UC_IN_CONT="1111" AND UC_IN_IR="1110" then
+		elsif UC_IN_CONT="1111" AND UC_IN_IR="1110" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 	
 	
 			--		*RTS 				 0Fh
-		elsif UC_IN_CONT="0011" AND UC_IN_IR="1111" then
+		elsif UC_IN_CONT="0011" AND UC_IN_IR="1111" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000000010000000";UC_OUT_RW<='1';	--SP ← SP + 1;
-		elsif UC_IN_CONT="0100" AND UC_IN_IR="1111" then
+		elsif UC_IN_CONT="0100" AND UC_IN_IR="1111" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000010000000000";UC_OUT_RW<='1';	--MAR ← SP; 
-		elsif UC_IN_CONT="0101" AND UC_IN_IR="1111" then
+		elsif UC_IN_CONT="0101" AND UC_IN_IR="1111" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00100000000010000000";UC_OUT_RW<='1';	--MBR ← M[DIR], SP ← SP + 1;
-		elsif UC_IN_CONT="0110" AND UC_IN_IR="1111" then
+		elsif UC_IN_CONT="0110" AND UC_IN_IR="1111" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000001000000000";UC_OUT_RW<='1';	--MBRaux ← MBR;
-		elsif UC_IN_CONT="0111" AND UC_IN_IR="1111" then
+		elsif UC_IN_CONT="0111" AND UC_IN_IR="1111" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000010000000000";UC_OUT_RW<='1';	--MAR ← SP; 
-		elsif UC_IN_CONT="1000" AND UC_IN_IR="1111" then
+		elsif UC_IN_CONT="1000" AND UC_IN_IR="1111" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
-		elsif UC_IN_CONT="1001" AND UC_IN_IR="1111" then
+		elsif UC_IN_CONT="1001" AND UC_IN_IR="1111" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000001000000000000";UC_OUT_RW<='1';	--PC ← MBRaux:MBR;
-		elsif UC_IN_CONT="1010" AND UC_IN_IR="1111" then
+		elsif UC_IN_CONT="1010" AND UC_IN_IR="1111" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000000000100000";UC_OUT_RW<='1';	--UC_IN_CONT ← 0;
 			
 		end if;
-	end if;
+	--end if;
 	end process;
 end behavioral;
 	

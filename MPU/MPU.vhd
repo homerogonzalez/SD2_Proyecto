@@ -125,7 +125,7 @@ architecture estructural of MPU is
 				UC_IN_CONT: in std_logic_vector(p-1 downto 0);
 				UC_IN_FLAGC: in std_logic;
 				UC_IN_FLAGZ: in std_logic;
-				CLK: in std_logic; --TEMP
+				--CLK: in std_logic; --TEMP
 				UC_OUT: out std_logic_vector(0 to 19);
 				UC_OUT_RW: out std_logic);
 	end component;
@@ -202,7 +202,7 @@ begin
 
 	U13: CONTADOR PORT MAP(CLK=>CLK,CE=>CE_CONT,ARST=>ARST,SRST=>X(14),CONT_OUT=>SAL_CONT); -- BIEN SRST
 
-	U14: UC PORT MAP(UC_IN_IR=>SAL_IR,UC_IN_CONT=>SAL_CONT,UC_IN_FLAGC=>SAL_CCR_C,UC_IN_FLAGZ=>SAL_CCR_Z,UC_OUT=>X,UC_OUT_RW=>SIG_RW,CLK=>CLK); -- BIEN
+	U14: UC PORT MAP(UC_IN_IR=>SAL_IR,UC_IN_CONT=>SAL_CONT,UC_IN_FLAGC=>SAL_CCR_C,UC_IN_FLAGZ=>SAL_CCR_Z,UC_OUT=>X,UC_OUT_RW=>SIG_RW); -- BIEN
 
 	U15: OR_2 PORT MAP(OR2_IN=>X(9)&X(8),OR2_OUT=>SAL_OR2_MUX1); --BIEN
 
