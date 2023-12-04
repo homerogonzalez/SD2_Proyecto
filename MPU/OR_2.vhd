@@ -1,0 +1,15 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use IEEE.std_logic_unsigned.all;
+
+entity OR_2 is
+    port(OR2_IN: in std_logic_vector(1 downto 0);
+         OR2_OUT: out std_logic);
+end OR_2;
+
+architecture behavioral of OR_2 is
+begin  
+    OR2_OUT <= OR2_IN(1) OR OR2_IN(0);
+end behavioral;
+            

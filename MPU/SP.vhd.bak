@@ -17,7 +17,7 @@ signal x: std_logic_vector(2 downto 0);
 begin
 x <= LOAD_SP&INC_SP&DEC_SP;
 	process(CLK,SRST,ARST,x)
-	begin
+	begin90
 		if (ARST = '1') then 
 			SP <= (others => '0');
 		elsif (rising_edge(CLK)) then
@@ -30,7 +30,6 @@ x <= LOAD_SP&INC_SP&DEC_SP;
 					when "100" => SP <= SP_IN_MBR;
 					when others => SP <= SP;
 				end case;
-			end if;
 		end if;
 	end process;
 	SP_OUT<="10"&SP;

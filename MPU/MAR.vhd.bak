@@ -22,7 +22,6 @@ begin
 				MAR_SIG <= (others => '0');
 			elsif (CE = '1') then
                 MAR_SIG <=MAR_IN_MUX1;
-			end if;
 		end if;
 	end process;
 	MAR_OUT<=MAR_SIG;
