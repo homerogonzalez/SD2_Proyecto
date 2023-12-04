@@ -17,12 +17,12 @@ begin
         process(CLK,ARST,SRST,CE,CCR_IN_C,CCR_IN_Z)
         begin
             if (ARST = '1') then 
-                CCRC <= (others => '0');
-                CCRZ <= (others => '0');
+                CCRC <= '0';
+                CCRZ <= '0';
             elsif (rising_edge(CLK)) then
                 if (SRST = '1') then
-                    CCRC <= (others => '0');
-                    CCRZ <= (others => '0');
+						 CCRC <= '0';
+						 CCRZ <= '0';
                 elsif (CE = '1') then
                     CCRC <= CCR_IN_C;
                     CCRZ <= CCR_IN_Z;

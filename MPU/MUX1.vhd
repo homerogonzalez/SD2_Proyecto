@@ -16,8 +16,8 @@ begin
         process(S)
         begin
             case S is
-                when '0' => MUX1_SIG <= MUX2_IN_PC;
-                when '1' => MUX1_SIG <= MUX2_IN_SP;
+                when '0' => MUX1_SIG <= MUX1_IN_MBR;
+                when '1' => MUX1_SIG <= MUX1_IN_MUX2;
                 when others => MUX1_SIG <= (others => '0');
             end case;
         end process;

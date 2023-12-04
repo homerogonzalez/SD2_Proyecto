@@ -1,0 +1,133 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "DIRECCIONES[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DIRECCIONES[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DIRECCIONES[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DIRECCIONES[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DIRECCIONES[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DIRECCIONES[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DIRECCIONES[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DIRECCIONES[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DIRECCIONES[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DIRECCIONES[9]",
+					"strict" : false
+				},
+				{
+					"name" : "RW",
+					"strict" : false
+				},
+				{
+					"name" : "ESTADOS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ESTADOS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ESTADOS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ESTADOS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "TIEMPOS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "TIEMPOS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "TIEMPOS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "TIEMPOS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATOS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATOS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATOS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATOS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATOS[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATOS[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATOS[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATOS[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "ARST",
+					"strict" : false
+				},
+				{
+					"name" : "SRST",
+					"strict" : false
+				},
+				{
+					"name" : "CE_CONT",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
