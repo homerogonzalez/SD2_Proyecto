@@ -19,10 +19,10 @@ begin
                 IR_OUT <= (others => '0');
             elsif (rising_edge(CLK)) then
                 if (CE = '1') then
---                      IR_SIG <= IR_IN_MBR;
+                    --IR_SIG <= IR_IN_MBR;
                     IR_OUT<=IR_IN_MBR(p-1 downto 0);
                 end if;
             end if;
         end process;
---        IR_OUT<=IR_SIG(p-1 downto 0);
+        --IR_OUT<=IR_SIG(p-1 downto 0);
 end behavioral;

@@ -8,6 +8,7 @@ entity UC is
 	port(--entradas
 		UC_IN_FLAGC,UC_IN_FLAGZ: in std_logic;
 		UC_IN_IR,UC_IN_CONT: in std_logic_vector(3 downto 0);
+		--CLK: in std_logic;
 		--salidas
 		UC_OUT: out std_logic_vector(0 to 19);
 		UC_OUT_RW: out std_logic);
@@ -294,3 +295,4 @@ begin
 	end process;
 UC_OUT<=X;
 end behavioral;
+	
