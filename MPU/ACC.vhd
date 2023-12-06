@@ -16,12 +16,14 @@ begin
         process(CLK,ARST,CE,ACC_IN_ALU,ACC)
         begin
             if (ARST = '1') then 
-                ACC <= (others => '0');
+                --ACC <= (others => '0');
+					 ACC_OUT <= (others => '0');
             elsif (rising_edge(CLK)) then
                 if (CE = '1') then
-                    ACC <= ACC_IN_ALU;
+                    --ACC <= ACC_IN_ALU;
+						  ACC_OUT <= ACC_IN_ALU;
                 end if;
             end if;
         end process;
-        ACC_OUT<=ACC;
+        --ACC_OUT<=ACC;
 end behavioral;

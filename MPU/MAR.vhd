@@ -17,12 +17,14 @@ begin
 	process(CLK,ARST,MAR_IN_MUX1,CE,MAR_SIG)
 	begin
 		if (ARST = '1') then 
-            MAR_SIG <= (others => '0');
+            --MAR_SIG <= (others => '0');
+				MAR_OUT <= (others => '0');
 		elsif (rising_edge(CLK)) then
 			if (CE = '1') then
-                MAR_SIG <=MAR_IN_MUX1;
+                --MAR_SIG <=MAR_IN_MUX1;
+					 MAR_OUT<=MAR_IN_MUX1;
 			end if;
 		end if;
 	end process;
-	MAR_OUT<=MAR_SIG;
+	--MAR_OUT<=MAR_SIG;
 end behavioral;

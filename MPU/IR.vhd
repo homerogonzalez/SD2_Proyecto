@@ -16,6 +16,7 @@ begin
         process(CLK,ARST,CE,IR_IN_MBR,IR_SIG)
         begin
             if (ARST = '1') then 
+					--IR_SIG <= (others => '0');
                 IR_OUT <= (others => '0');
             elsif (rising_edge(CLK)) then
                 if (CE = '1') then

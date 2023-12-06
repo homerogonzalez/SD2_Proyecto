@@ -16,12 +16,14 @@ begin
         process(CLK,ARST,CE,MBRAUX_IN_MBR,MBRAUX_SIG)
         begin
             if (ARST = '1') then 
-                MBRAUX_SIG <= (others => '0');
+                --MBRAUX_SIG <= (others => '0');
+					 MBRAUX_OUT <= (others => '0');
             elsif (rising_edge(CLK)) then
                 if (CE = '1') then
-                    MBRAUX_SIG <= MBRAUX_IN_MBR;
+                    --MBRAUX_SIG <= MBRAUX_IN_MBR;
+						  MBRAUX_OUT<=MBRAUX_IN_MBR(1 downto 0);
                 end if;
             end if;
         end process;
-        MBRAUX_OUT<=MBRAUX_SIG(1 downto 0);
+        --MBRAUX_OUT<=MBRAUX_SIG(1 downto 0);
 end behavioral;

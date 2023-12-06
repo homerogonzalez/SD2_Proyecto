@@ -61,7 +61,7 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_B8 -to NARST
 set_location_assignment PIN_F15 -to CE_CONT
-set_location_assignment PIN_A7 -to CLK
+set_location_assignment PIN_AB3 -to CLK
 set_location_assignment PIN_B11 -to TIEMPOS[3]
 set_location_assignment PIN_A11 -to TIEMPOS[2]
 set_location_assignment PIN_D14 -to TIEMPOS[1]

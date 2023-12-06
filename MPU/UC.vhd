@@ -197,7 +197,7 @@ begin
 		elsif UC_IN_CONT="0110" AND UC_IN_IR="1011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
 		elsif UC_IN_CONT="0111" AND UC_IN_IR="1011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
-			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
+			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR], PC ← PC + 1;
 		elsif UC_IN_CONT="1000" AND UC_IN_IR="1011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
 			X<="00000100000000000000";UC_OUT_RW<='1';	--PC ← MBRaux:MBR;
 		elsif UC_IN_CONT="1001" AND UC_IN_IR="1011" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-') then
