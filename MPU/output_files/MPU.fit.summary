@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Dec  5 20:13:57 2023
+Fitter Status : Successful - Fri Dec  8 12:11:55 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : MPU
 Top-level Entity Name : MPU
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 222 / 49,760 ( < 1 % )
-    Total combinational functions : 221 / 49,760 ( < 1 % )
+Total logic elements : 218 / 49,760 ( < 1 % )
+    Total combinational functions : 218 / 49,760 ( < 1 % )
     Dedicated logic registers : 56 / 49,760 ( < 1 % )
 Total registers : 56
 Total pins : 50 / 360 ( 14 % )

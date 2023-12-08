@@ -13,7 +13,6 @@ entity MPU is
 			ESTADOS: out std_logic_vector(p-1 downto 0);
 			TIEMPOS: out std_logic_vector(p-1 downto 0);
 			X_DISP: out std_logic_vector(0 to 19));
-			
 end MPU;
 		
 architecture estructural of MPU is
@@ -125,7 +124,6 @@ architecture estructural of MPU is
 				UC_IN_CONT: in std_logic_vector(p-1 downto 0);
 				UC_IN_FLAGC: in std_logic;
 				UC_IN_FLAGZ: in std_logic;
-				--CLK: in std_logic; --TEMP
 				UC_OUT: out std_logic_vector(0 to 19);
 				UC_OUT_RW: out std_logic);
 	end component;

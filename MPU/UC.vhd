@@ -15,6 +15,7 @@ end UC;
 
 architecture behavioral of UC is
 signal X: std_logic_vector(0 to 19);
+signal SIG_RW: std_logic;
 begin
 
 	process(UC_IN_FLAGC,UC_IN_FLAGZ,UC_IN_IR,UC_IN_CONT,X)
@@ -214,7 +215,7 @@ begin
 		elsif UC_IN_CONT="0110" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
 		elsif UC_IN_CONT="0111" AND UC_IN_IR="1100" AND std_match(UC_IN_FLAGC,'-') AND std_match(UC_IN_FLAGZ,'-') then
-			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
+			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
 		elsif UC_IN_CONT="1000" AND UC_IN_IR="1100" AND UC_IN_FLAGC='1' AND std_match(UC_IN_FLAGZ,'-') then
 			X<="00000100000000000000";UC_OUT_RW<='1';	--PC ← MBRaux:MBR;
 		elsif UC_IN_CONT="1000" AND UC_IN_IR="1100" AND UC_IN_FLAGC='0' AND std_match(UC_IN_FLAGZ,'-') then
@@ -233,7 +234,7 @@ begin
 		elsif UC_IN_CONT="0110" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000000100000000000";UC_OUT_RW<='1';	--MAR ← PC;
 		elsif UC_IN_CONT="0111" AND UC_IN_IR="1101" AND std_match(UC_IN_FLAGZ,'-') AND std_match(UC_IN_FLAGC,'-')  then
-			X<="00100000000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
+			X<="00100010000000000000";UC_OUT_RW<='1';	--MBR ← M[DIR];
 		elsif UC_IN_CONT="1000" AND UC_IN_IR="1101" AND UC_IN_FLAGZ='1' AND std_match(UC_IN_FLAGC,'-')  then
 			X<="00000100000000000000";UC_OUT_RW<='1';	--PC ← MBRaux:MBR;
 		elsif UC_IN_CONT="1000" AND UC_IN_IR="1101" AND UC_IN_FLAGZ='0' AND std_match(UC_IN_FLAGC,'-')  then

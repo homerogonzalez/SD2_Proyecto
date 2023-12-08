@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MPU
-Tue Dec  5 20:13:30 2023
+Fri Dec  8 12:11:31 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -58,13 +58,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec  5 20:13:30 2023          ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec  8 12:11:31 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; MPU                                            ;
 ; Top-level Entity Name              ; MPU                                            ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 226                                            ;
-;     Total combinational functions  ; 220                                            ;
+; Total logic elements               ; 223                                            ;
+;     Total combinational functions  ; 217                                            ;
 ;     Dedicated logic registers      ; 56                                             ;
 ; Total registers                    ; 56                                             ;
 ; Total pins                         ; 50                                             ;
@@ -212,16 +212,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 226       ;
+; Estimated Total logic elements              ; 223       ;
 ;                                             ;           ;
-; Total combinational functions               ; 220       ;
+; Total combinational functions               ; 217       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 136       ;
-;     -- 3 input functions                    ; 46        ;
-;     -- <=2 input functions                  ; 38        ;
+;     -- 4 input functions                    ; 131       ;
+;     -- 3 input functions                    ; 49        ;
+;     -- <=2 input functions                  ; 37        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 196       ;
+;     -- normal mode                          ; 193       ;
 ;     -- arithmetic mode                      ; 24        ;
 ;                                             ;           ;
 ; Total registers                             ; 56        ;
@@ -234,8 +234,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
 ; Maximum fan-out                             ; 56        ;
-; Total fan-out                               ; 1139      ;
-; Average fan-out                             ; 2.97      ;
+; Total fan-out                               ; 1126      ;
+; Average fan-out                             ; 2.96      ;
 +---------------------------------------------+-----------+
 
 
@@ -244,9 +244,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |MPU                       ; 220 (0)             ; 56 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 50   ; 0            ; 0          ; |MPU                ; MPU         ; work         ;
+; |MPU                       ; 217 (0)             ; 56 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 50   ; 0            ; 0          ; |MPU                ; MPU         ; work         ;
 ;    |ACC:U1|                ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|ACC:U1         ; ACC         ; work         ;
-;    |ALU:U0|                ; 54 (54)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|ALU:U0         ; ALU         ; work         ;
+;    |ALU:U0|                ; 53 (53)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|ALU:U0         ; ALU         ; work         ;
 ;    |CCR:U2|                ; 0 (0)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|CCR:U2         ; CCR         ; work         ;
 ;    |CONTADOR:U13|          ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|CONTADOR:U13   ; CONTADOR    ; work         ;
 ;    |IR:U4|                 ; 0 (0)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|IR:U4          ; IR          ; work         ;
@@ -261,7 +261,7 @@ https://fpgasoftware.intel.com/eula.
 ;    |OR_4:U17|              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|OR_4:U17       ; OR_4        ; work         ;
 ;    |PC:U6|                 ; 11 (11)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|PC:U6          ; PC          ; work         ;
 ;    |SP:U5|                 ; 10 (10)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|SP:U5          ; SP          ; work         ;
-;    |UC:U14|                ; 109 (109)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|UC:U14         ; UC          ; work         ;
+;    |UC:U14|                ; 107 (107)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MPU|UC:U14         ; UC          ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -291,8 +291,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MPU|MAR:U12|MAR_OUT[8]     ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MPU|MAR:U12|MAR_OUT[0]     ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |MPU|SP:U5|SP[6]            ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |MPU|MBR:U9|MBR_OUT[2]      ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MPU|MBR:U9|MBR_OUT[0]      ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |MPU|MBR:U9|MBR_SIG[2]      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MPU|MBR:U9|MBR_SIG[0]      ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |MPU|UC:U14|UC_OUT[19]      ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |MPU|ALU:U0|ALU_OUT[3]      ;
 ; 256:1              ; 2 bits    ; 340 LEs       ; 16 LEs               ; 324 LEs                ; No         ; |MPU|UC:U14|UC_OUT[13]      ;
@@ -455,19 +455,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR           ; 26                          ;
 ;     ENA CLR SLD       ; 26                          ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 240                         ;
+; cycloneiii_lcell_comb ; 237                         ;
 ;     arith             ; 24                          ;
 ;         2 data inputs ; 10                          ;
 ;         3 data inputs ; 14                          ;
-;     normal            ; 216                         ;
+;     normal            ; 213                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 20                          ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 32                          ;
-;         4 data inputs ; 136                         ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 35                          ;
+;         4 data inputs ; 131                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 5.41                        ;
+; Average LUT depth     ; 5.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -486,7 +486,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Tue Dec  5 20:13:07 2023
+    Info: Processing started: Fri Dec  8 12:11:10 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MPU -c MPU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -542,44 +542,44 @@ Info (12021): Found 2 design units, including 1 entities, in source file acc.vhd
     Info (12022): Found design unit 1: ACC-behavioral File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/ACC.vhd Line: 13
     Info (12023): Found entity 1: ACC File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/ACC.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file mpu.vhd
-    Info (12022): Found design unit 1: MPU-estructural File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 19
+    Info (12022): Found design unit 1: MPU-estructural File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 18
     Info (12023): Found entity 1: MPU File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
     Info (12022): Found design unit 1: ALU-behavioral File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/ALU.vhd Line: 15
     Info (12023): Found entity 1: ALU File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/ALU.vhd Line: 6
 Info (12127): Elaborating entity "MPU" for the top level hierarchy
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:U0" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 177
-Info (12128): Elaborating entity "ACC" for hierarchy "ACC:U1" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 179
-Info (12128): Elaborating entity "CCR" for hierarchy "CCR:U2" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 181
-Info (12128): Elaborating entity "MBRAUX" for hierarchy "MBRAUX:U3" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 183
-Info (12128): Elaborating entity "IR" for hierarchy "IR:U4" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 185
-Info (12128): Elaborating entity "SP" for hierarchy "SP:U5" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 187
-Info (12128): Elaborating entity "PC" for hierarchy "PC:U6" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 189
-Info (12128): Elaborating entity "MUX3" for hierarchy "MUX3:U7" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 191
-Info (12128): Elaborating entity "MUX2" for hierarchy "MUX2:U8" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 193
-Info (12128): Elaborating entity "MBR" for hierarchy "MBR:U9" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 195
-Info (12128): Elaborating entity "MUX1" for hierarchy "MUX1:U10" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 197
-Info (12128): Elaborating entity "BUFFER_TRI" for hierarchy "BUFFER_TRI:U11" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 199
-Info (12128): Elaborating entity "MAR" for hierarchy "MAR:U12" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 201
-Info (12128): Elaborating entity "CONTADOR" for hierarchy "CONTADOR:U13" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 203
-Info (12128): Elaborating entity "UC" for hierarchy "UC:U14" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 205
-Info (12128): Elaborating entity "OR_2" for hierarchy "OR_2:U15" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 207
-Info (12128): Elaborating entity "OR_3" for hierarchy "OR_3:U16" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 209
-Info (12128): Elaborating entity "OR_4" for hierarchy "OR_4:U17" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 211
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:U0" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 175
+Info (12128): Elaborating entity "ACC" for hierarchy "ACC:U1" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 177
+Info (12128): Elaborating entity "CCR" for hierarchy "CCR:U2" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 179
+Info (12128): Elaborating entity "MBRAUX" for hierarchy "MBRAUX:U3" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 181
+Info (12128): Elaborating entity "IR" for hierarchy "IR:U4" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 183
+Info (12128): Elaborating entity "SP" for hierarchy "SP:U5" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 185
+Info (12128): Elaborating entity "PC" for hierarchy "PC:U6" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 187
+Info (12128): Elaborating entity "MUX3" for hierarchy "MUX3:U7" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 189
+Info (12128): Elaborating entity "MUX2" for hierarchy "MUX2:U8" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 191
+Info (12128): Elaborating entity "MBR" for hierarchy "MBR:U9" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 193
+Info (12128): Elaborating entity "MUX1" for hierarchy "MUX1:U10" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 195
+Info (12128): Elaborating entity "BUFFER_TRI" for hierarchy "BUFFER_TRI:U11" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 197
+Info (12128): Elaborating entity "MAR" for hierarchy "MAR:U12" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 199
+Info (12128): Elaborating entity "CONTADOR" for hierarchy "CONTADOR:U13" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 201
+Info (12128): Elaborating entity "UC" for hierarchy "UC:U14" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 203
+Info (12128): Elaborating entity "OR_2" for hierarchy "OR_2:U15" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 205
+Info (12128): Elaborating entity "OR_3" for hierarchy "OR_3:U16" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 207
+Info (12128): Elaborating entity "OR_4" for hierarchy "OR_4:U17" File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 209
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "X_DISP[18]" is stuck at VCC File: C:/Users/gonza/OneDrive/ITSON/AD2023/Digitales 2/Proyecto/MPU/MPU.vhd Line: 15
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 282 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 280 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 39 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 232 logic cells
+    Info (21061): Implemented 230 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4862 megabytes
-    Info: Processing ended: Tue Dec  5 20:13:30 2023
-    Info: Elapsed time: 00:00:23
+    Info: Peak virtual memory: 4865 megabytes
+    Info: Processing ended: Fri Dec  8 12:11:31 2023
+    Info: Elapsed time: 00:00:21
     Info: Total CPU time (on all processors): 00:00:45
 
 

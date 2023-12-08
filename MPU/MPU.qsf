@@ -90,7 +90,7 @@ set_location_assignment PIN_Y7 -to DATOS[5]
 set_location_assignment PIN_Y8 -to DATOS[6]
 set_location_assignment PIN_AA10 -to DATOS[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CE_CONT
-set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DATOS[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DATOS[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TIEMPOS[0]

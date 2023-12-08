@@ -17,19 +17,15 @@ begin
         process(CLK,ARST,CE,CCR_IN_C,CCR_IN_Z,CCRZ,CCRC)
         begin
             if (ARST = '1') then 
-                --CCRC <= '0';
-                --CCRZ <= '0';
-						CCR_OUT_C<= '0';
-						CCR_OUT_Z<= '0';
+                CCRC <= '0';
+                CCRZ <= '0';
             elsif (rising_edge(CLK)) then
                 if (CE = '1') then
-                    --CCRC <= CCR_IN_C;
-                    --CCRZ <= CCR_IN_Z;
-						  CCR_OUT_C <= CCR_IN_C;
-						  CCR_OUT_Z <= CCR_IN_Z;
+                    CCRC <= CCR_IN_C;
+                    CCRZ <= CCR_IN_Z;
                 end if;
             end if;
         end process;
-        --CCR_OUT_C<=CCRC;
-        --CCR_OUT_Z<=CCRZ;
+        CCR_OUT_C<=CCRC;
+        CCR_OUT_Z<=CCRZ;
 end behavioral;

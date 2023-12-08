@@ -16,15 +16,13 @@ begin
 	process(CLK,ARST,MBR_IN_MUX3,CE,MBR_SIG)
 	begin
 		if (ARST = '1') then 
-            --MBR_SIG <= (others => '0');
-				MBR_OUT <= (others => '0');
+            MBR_SIG <= (others => '0');
 		elsif (rising_edge(CLK)) then
 			if (CE = '1') then
-                --MBR_SIG <=MBR_IN_MUX3;
-					 MBR_OUT<=MBR_IN_MUX3;
+                MBR_SIG <=MBR_IN_MUX3;
 			end if;
 		end if;
 	end process;
-	--MBR_OUT<=MBR_SIG;
+	MBR_OUT<=MBR_SIG;
 end behavioral;
 
